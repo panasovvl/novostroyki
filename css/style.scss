@@ -7,6 +7,7 @@
 
 :root {
     --akcent: #f03;
+    --akcent-active: rgb(155, 0, 31);
     --content-main: #060a1a;
     --content-dop: #747f85;
     --content-dop-light: #e3e4e5;
@@ -60,16 +61,13 @@ a {
     padding: 24px 20px;
 
     .m-header__search {
-        transition: all 0.5s ease;
+        .btn-outline-secondary {
+            --bs-btn-border-color: var(--bs-border-color);
+            --bs-btn-hover-color: var(--dominant-main);
+            --bs-btn-hover-bg: var(--akcent);
+            --bs-btn-active-bg: var(--akcent-active);
 
-        &:hover {
-            background-color: var(--akcent);
-            color: var(--dominant-main);
-
-            input::placeholder {
-                color: inherit;
-            }
-            button {
+            &:hover img {
                 filter: invert(1);
             }
         }
@@ -80,7 +78,29 @@ a {
             &::placeholder {
                 color: var(--content-dop);
             }
+        }
 
+            // transition: all 0.5s ease;
+
+            // &:hover {
+            //     background-color: var(--akcent);
+            //     color: var(--dominant-main);
+
+            //     input::placeholder {
+            //         color: inherit;
+            //     }
+            //     button {
+            //         filter: invert(1);
+            //     }
+            // }
+
+            // input {
+            //     color: inherit;
+
+            //     &::placeholder {
+            //         color: var(--content-dop);
+            //     }
+
+            // }
         }
     }
-}

@@ -6,6 +6,7 @@
 
 :root {
   --akcent: #f03;
+  --akcent-active: rgb(155, 0, 31);
   --content-main: #060a1a;
   --content-dop: #747f85;
   --content-dop-light: #e3e4e5;
@@ -55,20 +56,13 @@ a {
 .m-header {
   padding: 24px 20px;
 }
-.m-header .m-header__search {
-  transition: all 0.5s ease;
+.m-header .m-header__search .btn-outline-secondary {
+  --bs-btn-border-color: var(--bs-border-color);
+  --bs-btn-hover-color: var(--dominant-main);
+  --bs-btn-hover-bg: var(--akcent);
+  --bs-btn-active-bg: var(--akcent-active);
 }
-.m-header .m-header__search:hover {
-  background-color: var(--akcent);
-  color: var(--dominant-main);
-}
-.m-header .m-header__search:hover input::-moz-placeholder {
-  color: inherit;
-}
-.m-header .m-header__search:hover input::placeholder {
-  color: inherit;
-}
-.m-header .m-header__search:hover button {
+.m-header .m-header__search .btn-outline-secondary:hover img {
   filter: invert(1);
 }
 .m-header .m-header__search input {
