@@ -23,8 +23,8 @@
             <img src="./img/Telegram_24.svg" alt="Telegram_24">
           </a>
         </nav>
-        <form action="#" method="get">
-          <div class="m-header__search">
+        <form action="#" method="get" class="m-header__search">
+          <div class="m-header__search-field">
             <input type="text" class="" placeholder="Введите название ЖК или КП">
             <button class="" type="button"><img src="./img/search_24.svg" alt="Search"></button>
           </div>
@@ -34,21 +34,43 @@
           <a href="tel:78005552276" class="">+7 800 555 22 76</a>
           <p class="m-header__phone-text">Бесплатный звонок</p>
         </div>
-        <h1 class="m-header__brand">Новостройки<span>.Шоп</span></h1>
-        <nav class="m-header__menu">
-          <a href="#" class="m-header__link">Квартиры</a>
-          <a href="#" class="m-header__link">Дома</a>
-          <a href="#" class="m-header__link">Застройщик</a>
-          <a href="#" class="m-header__link">Акции</a>
-          <a href="#" class="m-header__link">Услуги</a>
-          <a href="#" class="m-header__link">Блог</a>
-          <a href="#" class="m-header__link">Мы</a>
-          <a href="#" class="m-header__link">Вакансии</a>
+        <h1 class="m-header__brand brand-font">
           <img src="./img/heart.svg" alt="Heart" class="m-header__heart">
+          Новостройки<span>.Шоп</span>
+        </h1>
+        <nav class="m-header__menu">
+          <span class="brand-font m-header__brand-aligner">&nbsp;</span>
+          <ul class="list-reset">
+            <li><a href="#" class="m-header__link">Квартиры</a></li>
+            <li><a href="#" class="m-header__link">Дома</a></li>
+            <li><a href="#" class="m-header__link">Застройщик</a></li>
+            <li><a href="#" class="m-header__link">Акции</a></li>
+            <li><a href="#" class="m-header__link">Услуги</a></li>
+            <li><a href="#" class="m-header__link">Блог</a></li>
+            <li><a href="#" class="m-header__link">Мы</a></li>
+            <li><a href="#" class="m-header__link">Вакансии</a>
+              <img src="./img/heart.svg" alt="Heart" class="m-header__heart">
+            </li>
+          </ul>
         </nav>
+        <div class="m-header__mobile-top">
+          <button class="m-header__burger-close">
+            <img src="./img/Burger-close.svg" alt="Burger Close">
+          </button>
+        </div>
+      </div>
+      <div class="m-header__mobile">
+        <button class="m-header__burger">
+          <img src="./img/Burger.svg" alt="Burger menu">
+        </button>
+        <h1 class="m-header__brand">
+          <img src="./img/heart.svg" alt="Heart" class="m-header__heart">
+          Новостройки<span>.Шоп</span>
+        </h1>
       </div>
     </div>
   </header>
+  <script type="module" src="./js/main.js"></script>
 </body>
 
 </html>
