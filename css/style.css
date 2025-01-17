@@ -38,7 +38,7 @@ img {
 body {
   font-family: "Inter", sans-serif;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 1.25rem;
   color: var(--content-main);
   background-color: var(--dominant-main);
 }
@@ -54,7 +54,7 @@ a {
 
 /* Header */
 .m-header {
-  padding: 24px 20px;
+  padding: 1.5rem 1.25rem;
 }
 .m-header .m-header__search .btn-outline-secondary {
   --bs-btn-border-color: var(--bs-border-color);
@@ -73,4 +73,43 @@ a {
 }
 .m-header .m-header__search input::placeholder {
   color: var(--content-dop);
+}
+.m-header .m-header__phone {
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: var(--content-dop);
+}
+@media screen and (max-width: 992px) {
+  .m-header .m-header__phone {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 992px) {
+  .m-header .m-header__phone-icon {
+    width: 0.75rem;
+    height: 0.75rem;
+  }
+}
+.m-header .m-header__phone-text {
+  font-size: 0.75rem;
+  color: var(--content-dop);
+}
+.m-header .m-header__brand {
+  font-weight: 700;
+  font-size: 2rem;
+  color: var(--content-main);
+}
+.m-header .m-header__brand span {
+  color: var(--akcent);
+}
+@media screen and (max-width: 1200px) {
+  .m-header .nav-link {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .m-header .m-header__nav-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
 }/*# sourceMappingURL=style.css.map */
