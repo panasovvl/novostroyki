@@ -1,4 +1,6 @@
 /* Vars & Mixins */
+$ham-res: 660;
+
 
 @mixin media($res) {
     @media screen and (max-width: #{$res}px) {
@@ -53,6 +55,10 @@ button {
 /* Common */
 
 :root {
+    --ham-res: #{$ham-res};
+}
+
+:root {
     --font-family: "Inter", sans-serif;
     --second-family: "YS Logotype", sans-serif;
 }
@@ -64,7 +70,7 @@ button {
     --content-dop: #747f85;
     --content-dop-light: #e3e4e5;
     --dominant-main: #fff;
-    --dominant-main-transparent: #ffffffcf;
+    --dominant-main-transparent: #fffffff0;
     --dominant-dop: #f4f5f9;
 }
 
@@ -120,7 +126,7 @@ a {
         padding: 20px 36px;
     }
 
-    @include media(660) {
+    @include media($ham-res) {
         padding: 33px 11px;
     }
 
@@ -131,14 +137,40 @@ a {
 
         @include media(1100) {
             gap: 9px;
+            align-items: center;
+
+            .m-header__brand {
+                order: -1;
+            }
+        }
+
+        @include media($ham-res) {
+            position: absolute;
+            inset: 0;
+            background-color: var(--dominant-main-transparent);
+            grid-template-columns: 1fr;
+            transform: translateY(-100%);
+            opacity: 0;
+            overflow-y: auto;
+
+            .m-header__brand {
+                display: none;
+            }
+
+            &.open {
+                transform: initial;
+                opacity: initial;
+            }
         }
 
         .m-header__mobile-top {
             display: none;
-
-            @include media(660) {
+            @include media($ham-res) {
                 display: initial;
             }
+            position: sticky;
+            top: 0;
+            background-color: var(--dominant-main);
 
             padding: 33px 12px 22px;
             border-bottom: 1px solid var(--content-dop-light);
@@ -151,29 +183,24 @@ a {
         }
     }
 
-    .m-header__burger {
-        background: none;
-        border: none;
-        order: -2;
-
-        display: none;
-
-        @include media(660) {
-            display: initial;
-        }
+    .m-header__box_trans {
+        transition: transform 0.5s ease, opacity 0.5s ease;
     }
+
 
     .m-header__soc {
         display: flex;
-
-        @include media(660) {
-            display: none;
-        }
 
         gap: 31px;
 
         @include media(1100) {
             justify-content: center;
+        }
+
+        @include media($ham-res) {
+            order: 2;
+            padding: 40px 52px 0 52px;
+            justify-content: space-between;
         }
     }
 
@@ -221,12 +248,9 @@ a {
     .m-header__phone {
         display: grid;
 
-        @include media(660) {
-            display: none;
-        }
-
         grid-template-columns: repeat(2, auto);
         align-items: center;
+        justify-content: center;
         gap: 0 8px;
         font-weight: 600;
         font-size: 24px;
@@ -234,6 +258,12 @@ a {
 
         @include media(1100) {
             font-size: 16px;
+        }
+
+        @include media($ham-res) {
+            padding-top: 40px;
+            padding-bottom: 40px;
+            order: 3;
         }
 
         .m-header__phone-icon {
@@ -246,6 +276,11 @@ a {
         .m-header__phone-text {
             grid-column: span 2;
             justify-self: end;
+
+            @include media($ham-res) {
+                justify-self: center;
+            }
+
             font-size: 12px;
         }
     }
@@ -253,6 +288,7 @@ a {
     .brand-font {
         font-weight: 700;
         font-size: 32px;
+
         @include media(730) {
             font-size: 20px;
         }
@@ -265,23 +301,8 @@ a {
 
         color: var(--content-main);
 
-        @include media(1100) {
-            order: -1;
-        }
-
         span {
             color: var(--akcent);
-        }
-
-        .m-header__heart {
-            display: none;
-            margin-right: 36px;
-
-            @include media(660) {
-                display: initial;
-                width: 16px;
-                height: 16px;
-            }
         }
     }
 
@@ -290,35 +311,23 @@ a {
         align-items: baseline;
 
         grid-column: span 2;
-        align-self: end;
 
         @include media(1100) {
             grid-column: span 3;
         }
 
-        @include media(660) {
-            position: absolute;
-            inset: 0;
-            background-color: var(--dominant-main-transparent);
+        @include media($ham-res) {
+            grid-column: initial;
         }
 
         ul {
-            flex:1 1 auto;
+            flex: 1 0 auto;
             display: flex;
-            width: auto;
             // gap: 31px;
-//            align-items: baseline;
             justify-content: space-between;
-            li {
-                display: flex;
-                gap: 55px; //До сердечка
+            align-items: center;
 
-                @include media(1100) {
-                    gap: 47px; 
-                }
-            }
-
-            @include media(660) {
+            @include media($ham-res) {
                 flex-direction: column;
                 align-items: stretch;
 
@@ -349,13 +358,37 @@ a {
                 width: 20px;
                 height: 20px;
             }
-            @include media(660) {
+
+            @include media($ham-res) {
                 display: none;
             }
         }
     }
 
     .m-header__mobile {
+        justify-content: space-between;
+        align-items: center;
         display: none;
+
+        @include media($ham-res) {
+            display: flex;
+        }
+
+        .m-header__burger {
+            background: none;
+            border: none;
+            //            order: -2;
+
+            display: none;
+
+            @include media($ham-res) {
+                display: initial;
+            }
+        }
+
+        .m-header__heart {
+            width: 16px;
+            height: 16px;
+        }
     }
 }

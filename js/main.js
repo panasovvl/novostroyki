@@ -5,24 +5,26 @@ const _$$ = (q, elm) => (elm ? elm : document).querySelectorAll(q);
 
 /* Hamburger menu */
 
-_$('.header__menu-button').addEventListener('click', evt => {
-//    console.log('evt1', evt);
-    _$('.header__menu-inner').classList.add('header__menu-inner_transitionable');
-    _$('.header__menu-container').classList.toggle('open');
+_$('.m-header__burger').addEventListener('click', evt => {
+    _$('.m-header__box').classList.add('m-header__box_trans');
+    _$('.m-header__box').classList.add('open');
+})
+
+_$('.m-header__burger-close').addEventListener('click', evt => {
+    _$('.m-header__box').classList.remove('open');
+    _$('.m-header__box').scrollTop = 0;
 })
 
 document.addEventListener('click', evt => {
-//    console.log('evt2', evt);
-    if (!_$('.header__menu-inner').contains(evt.target) &&
-        !_$('.header__menu-button').contains(evt.target)) {
-        _$('.header__menu-container').classList.remove('open');
+    if (!_$('.m-header__box').contains(evt.target) &&!_$('.m-header__burger').contains(evt.target)) {
+        _$('.m-header__box').classList.remove('open');
     }
 });
 
-const switch_resolution = getComputedStyle(document.documentElement).getPropertyValue('--switch-resolution');
-const mql = window.matchMedia(`(max-width: ${switch_resolution})`);
+const ham_res = getComputedStyle(document.documentElement).getPropertyValue('--ham-res');
+const mql = window.matchMedia(`(max-width: ${ham_res}px)`);
+
 mql.addEventListener("change", evt => {
-//    console.log('evt3', evt);
-    _$('.header__menu-inner').classList.remove('header__menu-inner_transitionable');
-    _$('.header__menu-container').classList.remove('open');
+    _$('.m-header__box').classList.remove('m-header__box_trans');
+    _$('.m-header__box').classList.remove('open');
 });
