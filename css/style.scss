@@ -118,6 +118,76 @@ a {
     max-width: 1282px;
 }
 
+/* Components */
+.drop {
+    position: relative;
+
+    .drop__field {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+
+        input {
+            flex: 1 0 auto;
+            border: none;
+            background: none;
+        }
+
+    }
+
+    &.drop_open .drop__icon {
+        transform: rotate(180deg);
+    }
+
+    .drop__list {
+        visibility: hidden;
+        position: absolute;
+        top: calc(100% + 10px);
+        left: -5px;
+        overflow: hidden;
+        z-index: 5;
+        width: calc(100% + 10px);
+        padding: 5px;
+
+        ul {
+            padding: 10px 0;
+            max-height: 200px;
+            overflow-y: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px 0 rgba(11, 33, 44, 0.24);
+            background: var(--dominant-main);
+            transform: translateY(-100%);
+            opacity: 0;
+            transition: opacity 0.5s, transform 0.5s;
+        }
+
+        .drop__item {
+            cursor: pointer;
+            user-select: none;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            padding: 10px 20px;
+            transition: color 0.2s, background-color 0.2s;
+
+            &:hover {
+                background-color: var(--akcent);
+                color: var(--dominant-dop);
+            }
+        }
+    }
+
+    &.drop_open .drop__list {
+        visibility: inherit;
+
+        ul {
+            transform: initial;
+            opacity: 1;
+        }
+    }
+
+}
+
 /* Header */
 .m-header {
     padding: 24px 36px;
@@ -165,9 +235,11 @@ a {
 
         .m-header__mobile-top {
             display: none;
+
             @include media($ham-res) {
                 display: initial;
             }
+
             position: sticky;
             top: 0;
             background-color: var(--dominant-main);
@@ -377,8 +449,6 @@ a {
         .m-header__burger {
             background: none;
             border: none;
-            //            order: -2;
-
             display: none;
 
             @include media($ham-res) {
@@ -389,6 +459,29 @@ a {
         .m-header__heart {
             width: 16px;
             height: 16px;
+        }
+    }
+}
+
+.m-filter {
+    .m-filter__city {
+        border: 1px solid var(--content-dop);
+        padding: 24px 32px 24px 32px;
+
+
+        input {
+            font-family: var(--font-family);
+            color: var(--content-main);
+        }
+
+        input::placeholder {
+            font-family: var(--font-family);
+            color: var(--content-dop);
+        }
+
+        .drop__item {
+            font-family: var(--font-family);
+            color: var(--content-main);
         }
     }
 }

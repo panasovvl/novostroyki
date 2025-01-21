@@ -5,6 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Новостройки.Шоп</title>
+  <link rel="stylesheet" href="plugins/simplebar/simplebar.min.css">
+  <script src="plugins/simplebar/simplebar.min.js"></script>
+
+
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -42,7 +46,7 @@
             <img src="./img/Burger-close.svg" alt="Burger Close">
           </button>
         </div>
-          <nav class="m-header__menu">
+        <nav class="m-header__menu">
           <span class="brand-font m-header__brand-aligner">&nbsp;</span>
           <ul class="list-reset">
             <li><a href="#" class="m-header__link">Квартиры</a></li>
@@ -53,7 +57,7 @@
             <li><a href="#" class="m-header__link">Блог</a></li>
             <li><a href="#" class="m-header__link">Мы</a></li>
             <li><a href="#" class="m-header__link">Вакансии</a>
-              
+
             </li><img src="./img/heart.svg" alt="Heart" class="m-header__heart">
           </ul>
         </nav>
@@ -69,7 +73,50 @@
       </div>
     </div>
   </header>
+  <section class="m-filter">
+    <div class="m-container">
+      <div class="m-filter__city drop">
+        <div class="drop__field">
+          <img src="./img/search_24.svg" alt="Search">
+          <input type="text" placeholder="Введите город">
+          <img class="drop__icon" src="./img/drop.svg" alt="Drop sign">
+        </div>
+        <div class="drop__list">
+          <ul class="list-reset">
+            <li class="drop__item">A</li>
+            <li class="drop__item">B</li>
+            <li class="drop__item">C</li>
+            <li class="drop__item">D</li>
+            <li class="drop__item">E</li>
+            <li class="drop__item">F</li>
+            <li class="drop__item">G</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- <div class="test" style="max-height: 200px;overflow-y: auto;">
+        1<br />
+        2<br />
+        3<br />
+        4<br />
+        5<br />
+        6<br />
+        7<br />
+        8<br />
+        9<br />
+        10<br />
+        11<br />
+        12<br />
+      </div> -->
+    </div>
+  </section>
   <script type="module" src="./js/main.js"></script>
 </body>
+
+<!--
+Шапка 5+3.5 = 8.5
+Фильтры 1
+
+-->
 
 </html>
