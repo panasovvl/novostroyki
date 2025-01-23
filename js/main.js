@@ -35,13 +35,126 @@ mql.addEventListener("change", (evt) => {
 });
 
 /* Filters */
-new SimpleBar(_$(".m-filter__city .drop__list ul"));
 
-_$(".m-filter__city input").addEventListener('focus', evt => {
-    _$('.m-filter__city').classList.add('drop_open');
-});
-document.addEventListener("click", evt => {
-    if (!_$(".m-filter__city").contains(evt.target)) {
-        _$(".m-filter__city").classList.remove("drop_open");
+/* Drop Search */
+function init_dropsearch(drop, list_cb, cb) {
+  const simpleBar = new SimpleBar(_$(".dropsearch__list ul", drop));
+
+  _$("input", drop).addEventListener("focus", (evt) => {
+    update_list();
+    _$(".dropsearch__list", drop).style.display = "block";
+    _$(".dropsearch__list", drop).offsetHeight;
+    drop.classList.add("drop_open");
+    _$("input", drop).select();
+  });
+
+  _$("ul", drop).addEventListener("transitionend", (evt) => {
+    if (!drop.classList.contains("drop_open"))
+      _$(".dropsearch__list", drop).style.display = "none";
+  });
+
+  document.addEventListener("click", (evt) => {
+    if (
+      drop.classList.contains("drop_open") &&
+      (!drop.contains(evt.target) ||
+        _$(".dropsearch__icon", drop) == evt.target)
+    ) {
+      drop.classList.remove("drop_open");
+      evt.preventDefault();
     }
   });
+
+  function item_click(evt) {
+    const item = evt.currentTarget;
+    _$("input", drop).value = item.getAttribute("data-label");
+    //    _$('.drop__clear', drop).style.visibility = 'inherit';
+    drop.classList.remove("drop_open");
+    cb(item.getAttribute("data-value"));
+  }
+
+  _$(".dropsearch__clear", drop).addEventListener("click", (evt) => {
+    _$("input", drop).value = "";
+    _$("input", drop).focus();
+    update_list();
+  });
+
+  _$("input", drop).addEventListener("keyup", update_list);
+
+  async function update_list() {
+    const text = _$("input", drop).value.trim();
+    const list = await list_cb(text);
+    const cont = simpleBar.getContentElement();
+    cont.innerHTML = "";
+    list.forEach((el) => {
+      if (el.label.toLowerCase().startsWith(text.toLowerCase())) {
+        const li = document.createElement("li");
+        li.className = "dropsearch__item";
+        li.setAttribute("data-value", el.value);
+        li.setAttribute("data-label", el.label);
+        let t =
+          '<span class="dropsearch__item_start">' +
+          el.label.substr(0, text.length) +
+          "</span>";
+        t += el.label.substr(text.length);
+        li.innerHTML = t;
+        li.addEventListener("click", item_click);
+        cont.appendChild(li);
+      }
+    });
+    if (cont.innerHTML == "") {
+      const p = document.createElement("p");
+      p.className = "dropsearch__empty";
+      cont.appendChild(p);
+    }
+    //    _$('.drop__clear', drop).style.visibility = text.length > 0 ? 'inherit' : '';
+  }
+}
+init_dropsearch(
+  _$(".m-filter__city"),
+  async (text) => {
+    const resp = await fetch("data/cities.json?q=" + encodeURIComponent(text));
+    return await resp.json();
+  },
+  (city) => {
+    console.log("Выбран город ", city);
+  }
+);
+
+/* Drop */
+function init_drop(drop) {
+  _$("button", drop).addEventListener("click", (evt) => {
+    if (!drop.classList.contains("drop_open")) {
+      _$(".drop__box", drop).style.display = "inherit";
+      _$(".drop__box", drop).offsetHeight;
+      drop.classList.add("drop_open");
+      evt.openning = true;
+      // evt.stopPropagation();
+    }
+  });
+
+  _$(".drop__inner", drop).addEventListener("transitionend", (evt) => {
+    if (!drop.classList.contains("drop_open"))
+      _$(".drop__box", drop).style.display = "none";
+  });
+
+  document.addEventListener("click", (evt) => {
+    if (
+      !evt.openning && drop.classList.contains("drop_open") &&
+      (!drop.contains(evt.target) || _$(".drop__icon", drop) == evt.target)
+    ) {
+      drop.classList.remove("drop_open");
+      // evt.preventDefault();
+    }
+  });
+}
+init_drop(_$(".m-filter__rooms"));
+
+/* Input */
+Inputmask({
+  alias: "integer",
+  min: 0,
+  max: 10,
+  showMaskOnHover: true,
+  rightAlign: true,
+  numericInput: true,
+}).mask(_$(".ot"));

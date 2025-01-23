@@ -7,8 +7,10 @@
   <title>Новостройки.Шоп</title>
   <link rel="stylesheet" href="plugins/simplebar/simplebar.min.css">
   <script src="plugins/simplebar/simplebar.min.js"></script>
+  <script src="plugins/inputmask/inputmask.min.js"></script>
 
 
+  <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -75,40 +77,90 @@
   </header>
   <section class="m-filter">
     <div class="m-container">
-      <div class="m-filter__city drop">
-        <div class="drop__field">
-          <img src="./img/search_24.svg" alt="Search">
-          <input type="text" placeholder="Введите город">
-          <img class="drop__icon" src="./img/drop.svg" alt="Drop sign">
-        </div>
-        <div class="drop__list">
-          <ul class="list-reset">
-            <li class="drop__item">A</li>
-            <li class="drop__item">B</li>
-            <li class="drop__item">C</li>
-            <li class="drop__item">D</li>
-            <li class="drop__item">E</li>
-            <li class="drop__item">F</li>
-            <li class="drop__item">G</li>
-          </ul>
-        </div>
+      <h1 class="m-filter__h1 text-h1">Ключи от вашего дома</h1>
+      <div class="m-filter__type-grp">
+        <label class="m-filter__type-btn">
+          <input type="radio" name="ned-type" checked>
+          Новостройки
+        </label>
+        <label class="m-filter__type-btn"><input type="radio" name="ned-type">Коттеджи</label>
+        <label class="m-filter__type-btn"><input type="radio" name="ned-type">Коммерческая недвижимость</label>
       </div>
-
-      <!-- <div class="test" style="max-height: 200px;overflow-y: auto;">
-        1<br />
-        2<br />
-        3<br />
-        4<br />
-        5<br />
-        6<br />
-        7<br />
-        8<br />
-        9<br />
-        10<br />
-        11<br />
-        12<br />
-      </div> -->
+      <div class="m-filter__bottom-box">
+        <div class="m-filter__other-grp">
+          <div class="m-filter__btn m-filter__rooms drop">
+            <button>
+              <div>Комнат</div>
+              <img class="drop__icon" src="./img/drop.svg" alt="Drop sign">
+            </button>
+            <div class="m-filter__rooms-box drop__box">
+              <div class="drop__inner">
+                <label class="m-filter__rooms-item">
+                  <input type="radio" name="rooms" value="1" checked>
+                  1
+                </label>
+                <label class="m-filter__rooms-item">
+                  <input type="radio" name="rooms" value="2">
+                  2
+                </label>
+                <label class="m-filter__rooms-item">
+                  <input type="radio" name="rooms" value="3">
+                  3
+                </label>
+                <label class="m-filter__rooms-item">
+                  <input type="radio" name="rooms" value="4">
+                  4+
+                </label>
+                <label class="m-filter__rooms-item">
+                  <input type="checkbox" name="studio">
+                  Студия
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="m-filter__btn m-filter__price drop">
+          <button>
+            Цена
+            <img class="m-filter__drop-icon" src="./img/drop.svg" alt="Drop sign">
+          </button>
+          </div>
+          <div class="m-filter__btn m-filter__area drop">
+          <button>
+            Площадь
+            <img class="m-filter__drop-icon" src="./img/drop.svg" alt="Drop sign">
+          </button>
+          </div>
+          <div class="m-filter__btn m-filter__city dropsearch">
+            <label class="dropsearch__field">
+              <img src="./img/search_24.svg" alt="Search">
+              <input type="text" placeholder="Введите город">
+              <button class="dropsearch__clear"><img src="./img/Burger-close.svg" alt="Drop reset"></button>
+              <img class="dropsearch__icon" src="./img/drop.svg" alt="Drop sign">
+            </label>
+            <div class="dropsearch__list">
+              <ul class="list-reset">
+              </ul>
+            </div>
+          </div>
+          <div class="m-filter__btn m-filter__distr dropsearch">
+            <label class="dropsearch__field">
+              <img src="./img/search_24.svg" alt="Search">
+              <input type="text" placeholder="Введите район">
+              <button class="dropsearch__clear"><img src="./img/Burger-close.svg" alt="Drop reset"></button>
+              <img class="dropsearch__icon" src="./img/drop.svg" alt="Drop sign">
+            </label>
+            <div class="dropsearch__list">
+              <ul class="list-reset">
+              </ul>
+            </div>
+          </div>
+        </div>
+        <button class="m-filter__search">
+          Найти
+        </button>
+      </div>
     </div>
+    <input type="text" class="ot" placeholder="От">
   </section>
   <script type="module" src="./js/main.js"></script>
 </body>
