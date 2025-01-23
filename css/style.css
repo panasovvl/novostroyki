@@ -555,21 +555,36 @@ footer {
   border: none;
   font-size: 16px;
 }
+.m-filter .m-filter__btn button .drop__icon {
+  width: 20px;
+  height: 12px;
+  -webkit-mask-image: url(../img/drop.svg);
+          mask-image: url(../img/drop.svg);
+  background: var(--content-dop);
+}
 .m-filter .m-filter__btn:first-child > * {
   border-radius: 8px 0 0 8px;
 }
 .m-filter .m-filter__btn:last-child > * {
   border-radius: 0 8px 8px 0;
 }
-.m-filter .m-filter__rooms-box {
+.m-filter .drop_open button {
+  color: var(--akcent);
+}
+.m-filter .drop_open button .drop__icon {
+  background: var(--akcent);
+}
+.m-filter .drop__box {
   left: -5px;
   padding: 5px;
 }
-.m-filter .m-filter__rooms-box .drop__inner {
+.m-filter .drop__box .drop__inner {
   border-radius: 8px;
   box-shadow: 0 2px 6px 0 rgba(11, 33, 44, 0.24);
   background: var(--dominant-main);
   padding: 32px;
+}
+.m-filter .m-filter__rooms-box .drop__inner {
   display: flex;
   gap: 8px;
 }
@@ -587,6 +602,33 @@ footer {
 }
 .m-filter .m-filter__rooms-box .drop__inner .m-filter__rooms-item input {
   display: none;
+}
+.m-filter .m-filter__price-box .drop__inner, .m-filter .m-filter__area-box .drop__inner {
+  display: flex;
+  gap: 4px;
+}
+.m-filter .m-filter__price-box .drop__inner .m-filter__field, .m-filter .m-filter__area-box .drop__inner .m-filter__field {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--content-dop-light);
+  border-radius: 4px;
+  padding: 0 16px;
+  width: 140px;
+  height: 52px;
+  color: var(--content-main);
+  font-size: 16px;
+  gap: 5px;
+}
+.m-filter .m-filter__price-box .drop__inner .m-filter__field input, .m-filter .m-filter__area-box .drop__inner .m-filter__field input {
+  color: inherit;
+  border: none;
+  width: 100%;
+}
+.m-filter .m-filter__price-box .drop__inner .m-filter__field input::-moz-placeholder, .m-filter .m-filter__area-box .drop__inner .m-filter__field input::-moz-placeholder {
+  color: var(--content-dop);
+}
+.m-filter .m-filter__price-box .drop__inner .m-filter__field input::placeholder, .m-filter .m-filter__area-box .drop__inner .m-filter__field input::placeholder {
+  color: var(--content-dop);
 }
 .m-filter .m-filter__city,
 .m-filter .m-filter__distr {

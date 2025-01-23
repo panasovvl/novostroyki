@@ -608,6 +608,13 @@ footer {
             background: var(--dominant-main);
             border: none;
             font-size: 16px;
+
+            .drop__icon {
+                width: 20px;
+                height: 12px;
+                mask-image: url(../img/drop.svg);
+                background: var(--content-dop);
+            }
         }
 
         &:first-child>* {
@@ -619,7 +626,17 @@ footer {
         }
     }
 
-    .m-filter__rooms-box {
+    .drop_open {
+        button {
+            color: var(--akcent);
+
+            .drop__icon {
+                background: var(--akcent);
+            }
+        }
+    }
+
+    .drop__box {
         left: -5px; //Чтобы тень была видна
         padding: 5px; //Чтобы тень была видна
 
@@ -628,6 +645,11 @@ footer {
             box-shadow: 0 2px 6px 0 rgba(11, 33, 44, 0.24);
             background: var(--dominant-main);
             padding: 32px;
+        }
+    }
+
+    .m-filter__rooms-box {
+        .drop__inner {
             display: flex;
             gap: 8px;
 
@@ -650,6 +672,35 @@ footer {
             }
         }
     }
+    .m-filter__price-box, .m-filter__area-box {
+        .drop__inner {
+            display: flex;
+            gap: 4px;
+
+            .m-filter__field {
+                display: flex;
+                align-items: center;
+                border: 1px solid var(--content-dop-light);
+                border-radius: 4px;
+                padding: 0 16px;
+                width: 140px;
+                height: 52px;
+                color: var(--content-main);
+                font-size: 16px;
+                gap: 5px;
+
+                input {
+                    color: inherit;
+                    border: none;
+                    width: 100%;
+                }
+                input::placeholder {
+                    color: var(--content-dop);
+                }
+    
+            }
+        }
+    }
 
     .m-filter__city,
     .m-filter__distr {
@@ -661,7 +712,7 @@ footer {
         .dropsearch__field {
             padding: 0px 28px 0px 10px;
             background: var(--dominant-main);
-    
+
             input {
                 font-family: var(--font-family);
                 color: var(--content-main);

@@ -139,8 +139,9 @@ function init_drop(drop) {
 
   document.addEventListener("click", (evt) => {
     if (
-      !evt.openning && drop.classList.contains("drop_open") &&
-      (!drop.contains(evt.target) || _$(".drop__icon", drop) == evt.target)
+      drop.classList.contains("drop_open") &&
+      (!drop.contains(evt.target) ||
+       (_$(".drop__icon", drop) == evt.target && !evt.openning))
     ) {
       drop.classList.remove("drop_open");
       // evt.preventDefault();
@@ -149,12 +150,31 @@ function init_drop(drop) {
 }
 init_drop(_$(".m-filter__rooms"));
 
+_$('.m-filter__rooms').addEventListener('change', evt => {
+  if(evt.target.value == 'studio')
+    console.log('Студия', evt.target.checked);
+  else
+    console.log('Комнат', evt.target.value);
+})
+
+_$('.m-filter__type-grp').addEventListener('change', evt => {
+  console.log('Тип недвижимости', evt.target.value);
+})
+
+init_drop(_$(".m-filter__price"));
+
 /* Input */
-Inputmask({
+const imask = Inputmask({
   alias: "integer",
   min: 0,
-  max: 10,
+  allowMinus: false,
   showMaskOnHover: true,
-  rightAlign: true,
+  rightAlign: false,
   numericInput: true,
-}).mask(_$(".ot"));
+});
+imask.mask(_$(".m-filter__price input[name=price-from]"));
+imask.mask(_$(".m-filter__price input[name=price-to]"));
+
+init_drop(_$(".m-filter__area"));
+imask.mask(_$(".m-filter__area input[name=area-from]"));
+imask.mask(_$(".m-filter__area input[name=area-to]"));

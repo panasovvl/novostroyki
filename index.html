@@ -80,18 +80,24 @@
       <h1 class="m-filter__h1 text-h1">Ключи от вашего дома</h1>
       <div class="m-filter__type-grp">
         <label class="m-filter__type-btn">
-          <input type="radio" name="ned-type" checked>
+          <input type="radio" name="ned-type" checked value="Новостройки">
           Новостройки
         </label>
-        <label class="m-filter__type-btn"><input type="radio" name="ned-type">Коттеджи</label>
-        <label class="m-filter__type-btn"><input type="radio" name="ned-type">Коммерческая недвижимость</label>
+        <label class="m-filter__type-btn">
+          <input type="radio" name="ned-type" value="Коттеджи">
+          Коттеджи
+        </label>
+        <label class="m-filter__type-btn">
+          <input type="radio" name="ned-type" value="Коммерческая недвижимость">
+          Коммерческая недвижимость
+        </label>
       </div>
       <div class="m-filter__bottom-box">
         <div class="m-filter__other-grp">
           <div class="m-filter__btn m-filter__rooms drop">
             <button>
               <div>Комнат</div>
-              <img class="drop__icon" src="./img/drop.svg" alt="Drop sign">
+              <div class="drop__icon"></div>
             </button>
             <div class="m-filter__rooms-box drop__box">
               <div class="drop__inner">
@@ -112,23 +118,47 @@
                   4+
                 </label>
                 <label class="m-filter__rooms-item">
-                  <input type="checkbox" name="studio">
+                  <input type="checkbox" name="studio" value="studio">
                   Студия
                 </label>
               </div>
             </div>
           </div>
           <div class="m-filter__btn m-filter__price drop">
-          <button>
-            Цена
-            <img class="m-filter__drop-icon" src="./img/drop.svg" alt="Drop sign">
-          </button>
+            <button>
+              Цена
+              <div class="drop__icon"></div>
+            </button>
+            <div class="m-filter__price-box drop__box">
+              <div class="drop__inner">
+                <div class="m-filter__field">
+                  <input type="text" name="price-from" placeholder="От">
+                  ₽
+                </div>
+                <div class="m-filter__field">
+                  <input type="text" name="price-to" placeholder="До">
+                  ₽
+                </div>
+              </div>
+            </div>
           </div>
           <div class="m-filter__btn m-filter__area drop">
-          <button>
-            Площадь
-            <img class="m-filter__drop-icon" src="./img/drop.svg" alt="Drop sign">
-          </button>
+            <button>
+              Площадь
+              <div class="drop__icon"></div>
+            </button>
+            <div class="m-filter__area-box drop__box">
+              <div class="drop__inner">
+                <div class="m-filter__field">
+                  <input type="text" name="area-from" placeholder="От">
+                  м<sup>2</sup>
+                </div>
+                <div class="m-filter__field">
+                  <input type="text" name="area-to" placeholder="До">
+                  м<sup>2</sup>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="m-filter__btn m-filter__city dropsearch">
             <label class="dropsearch__field">
@@ -167,7 +197,7 @@
 
 <!--
 Шапка 5+3.5 = 8.5
-Фильтры 1
+Фильтры 1+2+3
 
 -->
 
