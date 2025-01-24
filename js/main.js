@@ -34,8 +34,6 @@ mql.addEventListener("change", (evt) => {
   _$(".m-header__box").classList.remove("open");
 });
 
-/* Filters */
-
 /* Drop Search */
 function init_dropsearch(drop, list_cb, cb) {
   const simpleBar = new SimpleBar(_$(".dropsearch__list ul", drop));
@@ -109,17 +107,6 @@ function init_dropsearch(drop, list_cb, cb) {
     //    _$('.drop__clear', drop).style.visibility = text.length > 0 ? 'inherit' : '';
   }
 }
-init_dropsearch(
-  _$(".m-filter__city"),
-  async (text) => {
-    const resp = await fetch("data/cities.json?q=" + encodeURIComponent(text));
-    return await resp.json();
-  },
-  (city) => {
-    console.log("Выбран город ", city);
-  }
-);
-
 /* Drop */
 function init_drop(drop) {
   _$("button", drop).addEventListener("click", (evt) => {
@@ -148,6 +135,35 @@ function init_drop(drop) {
     }
   });
 }
+
+/* Обработка фильтров */
+let city = null;
+let district = null;
+
+init_dropsearch(
+  _$(".m-filter__city"),
+  async (text) => {
+    const resp = await fetch("data/cities.json?c=" + encodeURIComponent(text));
+    return await resp.json();
+  },
+  (c) => {
+    city = c;
+    console.log("Выбран город ", city);
+  }
+);
+
+init_dropsearch(
+  _$(".m-filter__distr"),
+  async (text) => {
+    const resp = await fetch("data/districts.json?c=" + encodeURIComponent(city) + "&d=" + encodeURIComponent(text));
+    return await resp.json();
+  },
+  (d) => {
+    district = d;
+    console.log("Выбран район ", district);
+  }
+);
+
 init_drop(_$(".m-filter__rooms"));
 
 _$('.m-filter__rooms').addEventListener('change', evt => {

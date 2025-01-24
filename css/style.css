@@ -516,6 +516,7 @@ footer {
 .m-filter .m-filter__type-grp .m-filter__type-btn {
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 0px 32px;
   background: var(--dominant-main);
   cursor: pointer;
@@ -536,20 +537,22 @@ footer {
 .m-filter .m-filter__bottom-box {
   display: flex;
   padding-top: 4px;
-  justify-content: space-between;
   min-height: 75px;
+  gap: 4px;
 }
 .m-filter .m-filter__other-grp {
   display: flex;
   gap: 4px;
 }
 .m-filter .m-filter__btn {
-  display: flex;
+  display: grid;
+  width: 194px;
 }
 .m-filter .m-filter__btn button {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  justify-items: start;
   padding: 0px 28px 0px 32px;
-  gap: 40px;
   align-items: center;
   background: var(--dominant-main);
   border: none;
@@ -565,7 +568,7 @@ footer {
 .m-filter .m-filter__btn:first-child > * {
   border-radius: 8px 0 0 8px;
 }
-.m-filter .m-filter__btn:last-child > * {
+.m-filter .m-filter__btn:nth-last-child(2) > * {
   border-radius: 0 8px 8px 0;
 }
 .m-filter .drop_open button {
@@ -603,11 +606,13 @@ footer {
 .m-filter .m-filter__rooms-box .drop__inner .m-filter__rooms-item input {
   display: none;
 }
-.m-filter .m-filter__price-box .drop__inner, .m-filter .m-filter__area-box .drop__inner {
+.m-filter .m-filter__price-box .drop__inner,
+.m-filter .m-filter__area-box .drop__inner {
   display: flex;
   gap: 4px;
 }
-.m-filter .m-filter__price-box .drop__inner .m-filter__field, .m-filter .m-filter__area-box .drop__inner .m-filter__field {
+.m-filter .m-filter__price-box .drop__inner .m-filter__field,
+.m-filter .m-filter__area-box .drop__inner .m-filter__field {
   display: flex;
   align-items: center;
   border: 1px solid var(--content-dop-light);
@@ -619,7 +624,8 @@ footer {
   font-size: 16px;
   gap: 5px;
 }
-.m-filter .m-filter__price-box .drop__inner .m-filter__field input, .m-filter .m-filter__area-box .drop__inner .m-filter__field input {
+.m-filter .m-filter__price-box .drop__inner .m-filter__field input,
+.m-filter .m-filter__area-box .drop__inner .m-filter__field input {
   color: inherit;
   border: none;
   width: 100%;
@@ -627,12 +633,12 @@ footer {
 .m-filter .m-filter__price-box .drop__inner .m-filter__field input::-moz-placeholder, .m-filter .m-filter__area-box .drop__inner .m-filter__field input::-moz-placeholder {
   color: var(--content-dop);
 }
-.m-filter .m-filter__price-box .drop__inner .m-filter__field input::placeholder, .m-filter .m-filter__area-box .drop__inner .m-filter__field input::placeholder {
+.m-filter .m-filter__price-box .drop__inner .m-filter__field input::placeholder,
+.m-filter .m-filter__area-box .drop__inner .m-filter__field input::placeholder {
   color: var(--content-dop);
 }
 .m-filter .m-filter__city,
 .m-filter .m-filter__distr {
-  display: flex;
   width: 240px;
   font-size: 16px;
 }
@@ -694,4 +700,46 @@ footer {
   color: var(--dominant-main);
   background-color: var(--akcent);
   border: none;
+  margin-left: auto;
+}
+@media screen and (max-width: 1100px) {
+  .m-filter .m-filter__type-grp .m-filter__type-btn {
+    flex-grow: 1;
+    font-size: 16px;
+    padding: 0px 22px;
+  }
+  .m-filter .m-filter__bottom-box {
+    flex-wrap: wrap;
+    min-height: 150px;
+  }
+  .m-filter .m-filter__btn,
+  .m-filter .m-filter__search {
+    flex: 1 1 30%;
+  }
+  .m-filter .m-filter__area .drop__box {
+    left: unset;
+    right: 0;
+  }
+  .m-filter .m-filter__btn:nth-child(4) > * {
+    border-radius: 8px 0 0 8px;
+  }
+  .m-filter .m-filter__btn:nth-last-child(4) > * {
+    border-radius: 0 8px 8px 0;
+  }
+}
+@media screen and (max-width: 660px) {
+  .m-filter .m-filter__group {
+    position: absolute;
+    inset: 0;
+    background-color: var(--dominant-main-transparent);
+    overflow-y: auto;
+    z-index: 10;
+  }
+  .m-filter .m-filter__group.open {
+    transform: initial;
+    opacity: initial;
+  }
+  .m-filter .m-filter__group {
+    transition: transform 0.5s ease, opacity 0.5s ease;
+  }
 }/*# sourceMappingURL=style.css.map */

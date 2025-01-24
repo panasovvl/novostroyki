@@ -78,25 +78,26 @@
   <section class="m-filter">
     <div class="m-container">
       <h1 class="m-filter__h1 text-h1">Ключи от вашего дома</h1>
-      <div class="m-filter__type-grp">
-        <label class="m-filter__type-btn">
-          <input type="radio" name="ned-type" checked value="Новостройки">
-          Новостройки
-        </label>
-        <label class="m-filter__type-btn">
-          <input type="radio" name="ned-type" value="Коттеджи">
-          Коттеджи
-        </label>
-        <label class="m-filter__type-btn">
-          <input type="radio" name="ned-type" value="Коммерческая недвижимость">
-          Коммерческая недвижимость
-        </label>
-      </div>
-      <div class="m-filter__bottom-box">
-        <div class="m-filter__other-grp">
+      <div class="m-filter__group">
+        <div class="m-filter__type-grp">
+          <label class="m-filter__type-btn">
+            <input type="radio" name="ned-type" checked value="Новостройки">
+            Новостройки
+          </label>
+          <label class="m-filter__type-btn">
+            <input type="radio" name="ned-type" value="Коттеджи">
+            Коттеджи
+          </label>
+          <label class="m-filter__type-btn">
+            <input type="radio" name="ned-type" value="Коммерческая недвижимость">
+            Коммерческая недвижимость
+          </label>
+        </div>
+        <div class="m-filter__bottom-box">
+          <!-- <div class="m-filter__other-grp"> -->
           <div class="m-filter__btn m-filter__rooms drop">
             <button>
-              <div>Комнат</div>
+              Комнат
               <div class="drop__icon"></div>
             </button>
             <div class="m-filter__rooms-box drop__box">
@@ -163,7 +164,7 @@
           <div class="m-filter__btn m-filter__city dropsearch">
             <label class="dropsearch__field">
               <img src="./img/search_24.svg" alt="Search">
-              <input type="text" placeholder="Введите город">
+              <input type="text" placeholder="Город">
               <button class="dropsearch__clear"><img src="./img/Burger-close.svg" alt="Drop reset"></button>
               <img class="dropsearch__icon" src="./img/drop.svg" alt="Drop sign">
             </label>
@@ -175,7 +176,7 @@
           <div class="m-filter__btn m-filter__distr dropsearch">
             <label class="dropsearch__field">
               <img src="./img/search_24.svg" alt="Search">
-              <input type="text" placeholder="Введите район">
+              <input type="text" placeholder="Район">
               <button class="dropsearch__clear"><img src="./img/Burger-close.svg" alt="Drop reset"></button>
               <img class="dropsearch__icon" src="./img/drop.svg" alt="Drop sign">
             </label>
@@ -184,20 +185,20 @@
               </ul>
             </div>
           </div>
+          <!-- </div> -->
+          <button class="m-filter__search">
+            Найти
+          </button>
         </div>
-        <button class="m-filter__search">
-          Найти
-        </button>
       </div>
     </div>
-    <input type="text" class="ot" placeholder="От">
   </section>
   <script type="module" src="./js/main.js"></script>
 </body>
 
 <!--
 Шапка 5+3.5 = 8.5
-Фильтры 1+2+3
+Фильтры 1+2+3+1+1
 
 -->
 
