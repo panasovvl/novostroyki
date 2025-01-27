@@ -677,6 +677,12 @@ footer {
             border: none;
             font-size: 16px;
 
+            @media (any-hover: hover) {
+                &:hover {
+                    background: var(--dominant-dop);
+                }
+            }
+
             .drop__icon {
                 width: 20px;
                 height: 12px;
@@ -786,6 +792,12 @@ footer {
         .dropsearch__field {
             padding: 0px 28px 0px 10px;
             background: var(--dominant-main);
+
+            @media (any-hover: hover) {
+                &:hover {
+                    background: var(--dominant-dop);
+                }
+            }
 
             input {
                 font-family: var(--font-family);

@@ -611,6 +611,11 @@ footer {
   border: none;
   font-size: 16px;
 }
+@media (any-hover: hover) {
+  .m-filter .m-filter__btn button:hover {
+    background: var(--dominant-dop);
+  }
+}
 .m-filter .m-filter__btn button .drop__icon {
   width: 20px;
   height: 12px;
@@ -702,6 +707,12 @@ footer {
 .m-filter .m-filter__distr .dropsearch__field {
   padding: 0px 28px 0px 10px;
   background: var(--dominant-main);
+}
+@media (any-hover: hover) {
+  .m-filter .m-filter__city .dropsearch__field:hover,
+  .m-filter .m-filter__distr .dropsearch__field:hover {
+    background: var(--dominant-dop);
+  }
 }
 .m-filter .m-filter__city .dropsearch__field input,
 .m-filter .m-filter__distr .dropsearch__field input {
