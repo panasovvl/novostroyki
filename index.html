@@ -78,7 +78,17 @@
   <section class="m-filter">
     <div class="m-container">
       <h1 class="m-filter__h1 text-h1">Ключи от вашего дома</h1>
+      <h1 class="m-filter__h1-mobile text-h1">Поиск</h1>
       <div class="m-filter__group">
+        <div class="m-filter__mobile-top">
+          <h3 class="m-filter__h3">Фильтры</h3>
+          <button class="m-filter__mobile-close">
+            <img src="./img/Burger-close.svg" alt="Mobile Close">
+          </button>
+        </div>
+        <div class="m-filter__mobile-reset">
+          <button>Сбросить</button>
+        </div>
         <div class="m-filter__type-grp">
           <label class="m-filter__type-btn">
             <input type="radio" name="ned-type" checked value="Новостройки">
@@ -164,7 +174,7 @@
           <div class="m-filter__btn m-filter__city dropsearch">
             <label class="dropsearch__field">
               <img src="./img/search_24.svg" alt="Search">
-              <input type="text" placeholder="Город">
+              <input type="text" data-ph="Город" data-ph-mobile="Введите город">
               <button class="dropsearch__clear"><img src="./img/Burger-close.svg" alt="Drop reset"></button>
               <img class="dropsearch__icon" src="./img/drop.svg" alt="Drop sign">
             </label>
@@ -176,7 +186,7 @@
           <div class="m-filter__btn m-filter__distr dropsearch">
             <label class="dropsearch__field">
               <img src="./img/search_24.svg" alt="Search">
-              <input type="text" placeholder="Район">
+              <input type="text" data-ph="Район" data-ph-mobile="Введите район">
               <button class="dropsearch__clear"><img src="./img/Burger-close.svg" alt="Drop reset"></button>
               <img class="dropsearch__icon" src="./img/drop.svg" alt="Drop sign">
             </label>
@@ -191,6 +201,10 @@
           </button>
         </div>
       </div>
+      <button class="m-filter__mobile-search">
+        Найти недвижимость
+        <img src="./img/search_24.svg" alt="Search">
+      </button>
     </div>
   </section>
   <script type="module" src="./js/main.js"></script>

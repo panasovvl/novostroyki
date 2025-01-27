@@ -27,11 +27,12 @@ document.addEventListener("click", (evt) => {
 const ham_res = getComputedStyle(document.documentElement).getPropertyValue(
   "--ham-res"
 );
-const mql = window.matchMedia(`(max-width: ${ham_res}px)`);
+const ham_mql = window.matchMedia(`(max-width: ${ham_res}px)`);
 
-mql.addEventListener("change", (evt) => {
+ham_mql.addEventListener("change", (evt) => {
   _$(".m-header__box").classList.remove("m-header__box_trans");
   _$(".m-header__box").classList.remove("open");
+  _$(".m-header__box").scrollTop = 0;
 });
 
 /* Drop Search */
@@ -54,7 +55,8 @@ function init_dropsearch(drop, list_cb, cb) {
   document.addEventListener("click", (evt) => {
     if (
       drop.classList.contains("drop_open") &&
-      (!drop.contains(evt.target) ||
+      (!_$('.dropsearch__field', drop).contains(evt.target)
+       && !_$('.dropsearch__list', drop).contains(evt.target) ||
         _$(".dropsearch__icon", drop) == evt.target)
     ) {
       drop.classList.remove("drop_open");
@@ -194,3 +196,39 @@ imask.mask(_$(".m-filter__price input[name=price-to]"));
 init_drop(_$(".m-filter__area"));
 imask.mask(_$(".m-filter__area input[name=area-from]"));
 imask.mask(_$(".m-filter__area input[name=area-to]"));
+
+function change_dropsearch_placeholder() {
+  let ph = _$('.m-filter__city input').getAttribute(ham_mql.matches ? 'data-ph-mobile' : 'data-ph');
+  _$('.m-filter__city input').setAttribute('placeholder', ph);
+  ph = _$('.m-filter__distr input').getAttribute(ham_mql.matches ? 'data-ph-mobile' : 'data-ph');
+  _$('.m-filter__distr input').setAttribute('placeholder', ph);
+}
+change_dropsearch_placeholder();
+
+/* Mobile filters */
+
+_$(".m-filter__mobile-search").addEventListener("click", (evt) => {
+  _$(".m-filter__group").classList.add("m-filter__group_trans");
+  _$(".m-filter__group").classList.add("open");
+});
+
+_$(".m-filter__mobile-close").addEventListener("click", (evt) => {
+  _$(".m-filter__group").classList.remove("open");
+  _$(".m-filter__group").scrollTop = 0;
+});
+
+document.addEventListener("click", (evt) => {
+  if (
+    !_$(".m-filter__group").contains(evt.target) &&
+    !_$(".m-filter__mobile-search").contains(evt.target)
+  ) {
+    _$(".m-filter__group").classList.remove("open");
+  }
+});
+
+ham_mql.addEventListener("change", (evt) => {
+  _$(".m-filter__group").classList.remove("m-filter__group_trans");
+  _$(".m-filter__group").classList.remove("open");
+  _$(".m-filter__group").scrollTop = 0;
+  change_dropsearch_placeholder();
+});

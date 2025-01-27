@@ -142,8 +142,8 @@ a {
             padding: 5px;
             display: none;
             background: white;
-            min-width: 25px;
-            min-height: 25px;
+            min-width: 23px;
+            min-height: 23px;
             border-radius: 50%;
             border: none;
 
@@ -267,6 +267,7 @@ footer {
         font-size: 32px;
     }
 }
+
 
 /* Header */
 .m-header {
@@ -554,6 +555,47 @@ footer {
         margin-bottom: 20px;
     }
 
+    .m-filter__h1-mobile {
+        display: none;
+    }
+
+    .m-filter__mobile-top {
+        display: none;
+        position: sticky;
+        top: 0;
+        background-color: var(--dominant-main);
+        padding-top: 33px;
+        padding-bottom: 19px;
+
+        .m-filter__h3 {
+            font-family: var(--font-family);
+            font-weight: 700;
+            font-size: 20px;
+            color: var(--content-main);
+        }
+
+        .m-filter__mobile-close {
+            background: none;
+            border: none;
+        }
+
+    }
+
+    .m-filter__mobile-reset {
+        display: none;
+
+        button {
+            font-family: var(--font-family);
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--akcent);
+            background: none;
+            border: none;
+            padding-top: 13px;
+            margin-bottom: 32px;
+        }
+    }
+
     .m-filter__type-grp {
         display: flex;
         gap: 4px;
@@ -574,6 +616,8 @@ footer {
             &:has(input:checked) {
                 background-color: var(--akcent);
                 color: var(--dominant-main);
+                border: none;
+                font-weight: 600;
             }
 
             &:first-child {
@@ -584,6 +628,25 @@ footer {
                 border-radius: 0 8px 8px 0;
             }
         }
+    }
+
+    .m-filter__mobile-search {
+        display: none;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        border-radius: 8px;
+        padding: 0 20px;
+        margin-top: 12px;
+        width: 100%;
+        height: 48px;
+        background: var(--dominant-main);
+
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 16px;
+        color: var(--content-main);
+        border: none;
+        text-align: left;
     }
 
     .m-filter__bottom-box {
@@ -664,11 +727,13 @@ footer {
                 padding: 18px 32px;
                 font-size: 16px;
                 color: var(--content-main);
+                text-align: center;
                 cursor: pointer;
 
                 &:has(input:checked) {
                     background: var(--akcent);
                     color: var(--dominant-main);
+                    font-weight: 600;
                 }
 
                 input {
@@ -686,6 +751,7 @@ footer {
 
             .m-filter__field {
                 display: flex;
+                flex: 1 1 auto;
                 align-items: center;
                 border: 1px solid var(--content-dop-light);
                 border-radius: 4px;
@@ -814,12 +880,27 @@ footer {
     }
 
     @include media($ham-res) {
+        .m-filter__h1 {
+            display: none;
+        }
+
+        .m-filter__h1-mobile {
+            display: initial;
+        }
+
+        .m-filter__mobile-top {
+            display: flex;
+            z-index: 1;
+            justify-content: space-between;
+        }
+
         .m-filter__group {
             position: absolute;
             inset: 0;
             background-color: var(--dominant-main-transparent);
-            // transform: translateY(-100%);
-            // opacity: 0;
+            padding: 0 12px;
+            transform: translateY(-100%);
+            opacity: 0;
             overflow-y: auto;
             z-index: 10;
 
@@ -827,10 +908,143 @@ footer {
                 transform: initial;
                 opacity: initial;
             }
+
+            .m-filter__mobile-reset {
+                display: inherit;
+            }
+
+            .m-filter__type-grp {
+                flex-wrap: wrap;
+                min-height: 120px;
+
+                .m-filter__type-btn {
+                    flex: 1 1 49%;
+                    border-radius: 4px;
+                    border: 1px solid var(--content-dop-light);
+                    font-size: 14px;
+                }
+            }
+
+            .m-filter__bottom-box {
+                .m-filter__btn {
+                    flex: 1 1 99%;
+                }
+
+                .drop {
+                    padding-top: 40px;
+
+                    button {
+                        background: none;
+                        padding: 0;
+                        font-size: 14px;
+                        pointer-events: none;
+                    }
+
+                    .drop__icon {
+                        display: none;
+                    }
+
+                    .drop__box {
+                        display: initial !important;
+                        position: unset;
+                        padding: 0;
+                        z-index: 0;
+
+                        .drop__inner {
+                            transform: none;
+                            opacity: unset;
+                            border-radius: 0;
+                            box-shadow: none;
+                            background: none;
+                            padding: 20px 0 0 0;
+                        }
+                    }
+                }
+
+                .m-filter__rooms {
+                    button {
+                        display: none;
+                    }
+                }
+
+                .m-filter__rooms-item {
+                    background: var(--dominant-main);
+                    padding: 18px 20px;
+                }
+
+                .m-filter__rooms-box {
+                    &:before {
+                        content: "Колличество комнат";
+                        font-family: var(--font-family);
+                        font-weight: 400;
+                        font-size: 14px;
+                        color: var(--content-main);
+                    }
+
+                    .drop__inner {
+                        flex-wrap: wrap;
+
+                        .m-filter__rooms-item {
+                            flex: 1 1 20%;
+                            font-size: 14px;
+                        }
+                    }
+                }
+
+                .m-filter__field {
+                    background: var(--dominant-main);
+                }
+
+                .m-filter__price-box {
+                    .drop__inner {}
+                }
+
+                .m-filter__city {
+                    &:before {
+                        content: "Город";
+                        font-family: var(--font-family);
+                        font-weight: 400;
+                        font-size: 14px;
+                        color: var(--content-main);
+                    }
+                }
+
+                .m-filter__distr {
+                    &:before {
+                        content: "Район";
+                        font-family: var(--font-family);
+                        font-weight: 400;
+                        font-size: 14px;
+                        color: var(--content-main);
+                    }
+                }
+
+                .m-filter__city,
+                .m-filter__distr {
+                    padding-top: 40px;
+
+                    .dropsearch__field {
+                        height: 52px;
+                        border: 1px solid var(--content-dop-light);
+                        border-radius: 8px;
+                        margin-top: 20px;
+                    }
+                }
+
+                .m-filter__search {
+                    margin-top: 40px;
+                    margin-bottom: 40px;
+                    height: 72px;
+                }
+            }
         }
 
-        .m-filter__group {
+        .m-filter__group_trans {
             transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+
+        .m-filter__mobile-search {
+            display: grid;
         }
     }
 }
