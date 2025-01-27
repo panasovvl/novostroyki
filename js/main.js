@@ -232,3 +232,23 @@ ham_mql.addEventListener("change", (evt) => {
   _$(".m-filter__group").scrollTop = 0;
   change_dropsearch_placeholder();
 });
+
+/* Popular */
+const swiper = new Swiper('.m-popular__swiper', {
+  // Optional parameters
+  direction: 'horizontal',
+  loop: true,
+  slidesPerView: 3,
+  spaceBetween: 25,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+});

@@ -11,6 +11,7 @@
 
 
   <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="plugins/swiper/swiper-bundle.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -220,17 +221,96 @@
         </div>
         <div class="m-filter__counter">
           <p class="m-filter__number">4</p>
-          <p class="m-filter__label">Коттеджных<br/>посёлка</p>
+          <p class="m-filter__label">Коттеджных<br />посёлка</p>
         </div>
       </div>
     </div>
   </section>
+  <section class="m-popular">
+    <div class="m-container">
+      <div class="m-popular__top">
+        <h2 class="m-popular__h2 text-h2">
+          Популярные ЖК
+        </h2>
+        <a href="#" class="m-popular__all">Все жилие комплексы</a>
+      </div>
+      <div class="m-popular__swiper swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="m-popular__card">
+              <div class="m-popular__pic">
+                <img src="./img/house1.png" alt="House1">
+                <div>
+                  <p class="m-popular__counter">21</p>
+                  <p class="m-popular__counter-label">Квартир в продаже</p>
+                </div>
+                <picture></picture>
+              </div>
+              <h4 class="m-popular__price">от 17 484 000 ₽</h4>
+              <h3 class="m-popular__name">ЖК «Девелопмент Плаза»</h3>
+              <h3 class="m-popular__address">г. Краснодар, 40 лет Победы ул., д. 33 Г</h3>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="m-popular__card">
+              <div class="m-popular__pic">
+                <img src="./img/house2.png" alt="House2">
+                <div>
+                  <p class="m-popular__counter">26</p>
+                  <p class="m-popular__counter-label">Квартир в продаже</p>
+                </div>
+                <picture></picture>
+              </div>
+              <h4 class="m-popular__price"></h4>
+              <h3 class="m-popular__name"></h3>
+              <h3 class="m-popular__address"></h3>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="m-popular__card">
+              <div class="m-popular__pic">
+                <img src="./img/house3.png" alt="House3">
+                <div>
+                  <p class="m-popular__counter">249</p>
+                  <p class="m-popular__counter-label">Квартир в продаже</p>
+                </div>
+                <picture></picture>
+              </div>
+              <h4 class="m-popular__price">от 3 785 210 ₽</h4>
+              <h3 class="m-popular__name">ЖК «Архитектор»</h3>
+              <h3 class="m-popular__address">г. Краснодар, Западный обход мкр., д. литер 1.1</h3>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="m-popular__card">
+              <div class="m-popular__pic">
+                <img src="./img/house2.png" alt="House2">
+                <div>
+                  <p class="m-popular__counter">35</p>
+                  <p class="m-popular__counter-label">Квартир в продаже</p>
+                </div>
+                <picture></picture>
+              </div>
+              <h4 class="m-popular__price"></h4>
+              <h3 class="m-popular__name"></h3>
+              <h3 class="m-popular__address"></h3>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </div>
+  </section>
+  <script src="./plugins/swiper/swiper-bundle.min.js"></script>
   <script type="module" src="./js/main.js"></script>
 </body>
 
 <!--
 Шапка 5+3.5 = 8.5
 Фильтры 1+2+3+1+1+3
+Популярные 3
 
 -->
 

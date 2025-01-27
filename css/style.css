@@ -211,6 +211,23 @@ a {
   opacity: 1;
 }
 
+.swiper {
+  --swiper-navigation-color: var(--content-dop);
+  --swiper-navigation-size: 20px;
+  --swiper-pagination-color: var(--content-main);
+  --swiper-pagination-bullet-inactive-color: var(--content-dop);
+  --swiper-navigation-sides-offset: 0px;
+  --swiper-pagination-bottom: 0px;
+}
+.swiper .swiper-button-prev,
+.swiper .swiper-button-next {
+  background: var(--dominant-main);
+  border: 1px solid var(--content-dop);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+}
+
 /* All sections */
 header,
 section,
@@ -242,6 +259,14 @@ footer {
   .text-h1 {
     font-size: 32px;
   }
+}
+
+.text-h2 {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 100%;
+  color: var(--content-main);
 }
 
 /* Header */
@@ -963,5 +988,94 @@ footer {
   .m-filter .m-filter__counter-box .m-filter__label {
     font-weight: 600;
     font-size: 9px;
+  }
+}
+
+.m-popular {
+  padding-top: 80px;
+}
+.m-popular .m-popular__top {
+  display: grid;
+  align-items: baseline;
+  grid-template-columns: 1fr auto;
+}
+.m-popular .m-popular__all {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--akcent);
+}
+.m-popular .m-popular__swiper {
+  --pad-top: 32px;
+  --swiper-navigation-top-offset: calc(116px + var(--pad-top) - 16px);
+  margin: 0 -15px;
+  padding: var(--pad-top) 15px 55px;
+}
+.m-popular .m-popular__swiper .m-popular__card .m-popular__pic {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  aspect-ratio: 410/232;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.m-popular .m-popular__swiper .m-popular__card .m-popular__pic img {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  border-radius: 8px;
+}
+.m-popular .m-popular__swiper .m-popular__card .m-popular__pic .m-popular__counter {
+  font-family: var(--font-family);
+  font-weight: 900;
+  font-size: 16px;
+  color: var(--dominant-main);
+}
+.m-popular .m-popular__swiper .m-popular__card .m-popular__pic .m-popular__counter-label {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 12px;
+  color: var(--dominant-main);
+}
+.m-popular .m-popular__swiper .m-popular__card .m-popular__pic picture {
+  -webkit-mask-image: url(../img/heart.svg);
+          mask-image: url(../img/heart.svg);
+  background: var(--dominant-main);
+  width: 24px;
+  height: 23px;
+}
+.m-popular .m-popular__swiper .m-popular__card .m-popular__price {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--content-main);
+  padding-top: 12px;
+}
+.m-popular .m-popular__swiper .m-popular__card .m-popular__name,
+.m-popular .m-popular__swiper .m-popular__card .m-popular__address {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--content-main);
+  padding-top: 12px;
+}
+@media screen and (max-width: 1100px) {
+  .m-popular {
+    padding-top: 40px;
+  }
+  .m-popular .m-popular__h2 {
+    font-size: 28px;
+  }
+}
+@media screen and (max-width: 660px) {
+  .m-popular .m-popular__h2 {
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .m-popular .m-popular__all {
+    font-size: 14px;
   }
 }/*# sourceMappingURL=style.css.map */
