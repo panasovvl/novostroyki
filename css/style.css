@@ -993,6 +993,7 @@ footer {
 
 .m-popular {
   padding-top: 80px;
+  padding-bottom: 0;
 }
 .m-popular .m-popular__top {
   display: grid;
@@ -1105,7 +1106,7 @@ footer {
   .m-popular .m-popular__swiper {
     --pad-top: 20px;
     margin: 0 -11px;
-    padding: var(--pad-top) 0 43px;
+    padding: var(--pad-top) 0 23px;
   }
   .m-popular .m-popular__swiper .m-popular__card .m-popular__pic .m-popular__counter {
     font-size: 14px;
@@ -1119,5 +1120,140 @@ footer {
   }
   .m-popular .m-popular__swiper .m-popular__card .m-popular__price {
     font-size: 14px;
+  }
+}
+
+.m-ipot {
+  padding-top: 80px;
+}
+.m-ipot .m-ipot__box {
+  position: relative;
+  display: flex;
+}
+.m-ipot .m-ipot__info {
+  flex: 0 0 auto;
+  width: 871px;
+  background: var(--akcent);
+  padding: 32px 20px 20px 20px;
+  border-radius: 8px;
+}
+.m-ipot .m-ipot__h2 {
+  color: var(--dominant-main);
+}
+.m-ipot .m-ipot__p {
+  width: 826px;
+  padding-top: 12px;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 150%;
+  color: var(--dominant-main);
+}
+.m-ipot .m-ipot__btns {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  height: 64px;
+}
+.m-ipot .m-iport__calc,
+.m-ipot .m-iport__spec {
+  border-radius: 4px;
+  background: var(--dominant-main);
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--content-main);
+  border: none;
+}
+.m-ipot .m-iport__spec {
+  background: #fcc3ce;
+}
+.m-ipot .m-ipot__icon {
+  position: relative;
+  flex: 1 1 0;
+  background: var(--akcent);
+  border-radius: 8px;
+}
+.m-ipot .m-ipot__icon svg {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+@media screen and (max-width: 1366px) {
+  .m-ipot .m-ipot__info {
+    width: 935px;
+  }
+  .m-ipot .m-ipot__icon {
+    background: none;
+  }
+}
+@media screen and (max-width: 1280px) {
+  .m-ipot .m-ipot__info {
+    flex: 1 1 auto;
+    border-radius: 20px;
+    width: inherit;
+  }
+  .m-ipot .m-ipot__icon {
+    position: absolute;
+    background: var(--akcent);
+    border: 2px solid var(--dominant-main);
+    border-radius: 50%;
+    right: 30px;
+    top: -30px;
+    width: 60px;
+    height: 60px;
+  }
+  .m-ipot .m-ipot__icon svg {
+    position: inherit;
+    width: 100%;
+    height: 100%;
+    padding: 8px;
+    fill: var(--dominant-main);
+  }
+}
+@media screen and (max-width: 1100px) {
+  .m-ipot {
+    padding-top: 40px;
+  }
+  .m-ipot .m-ipot__h2 {
+    font-size: 28px;
+  }
+  .m-ipot .m-ipot__p {
+    width: inherit;
+    font-weight: 600;
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 660px) {
+  .m-ipot {
+    padding-top: 22px;
+  }
+  .m-ipot .m-ipot__info {
+    padding: 20px 12px 12px 12px;
+    border-radius: 8px;
+  }
+  .m-ipot .m-ipot__h2 {
+    font-weight: 700;
+    font-size: 20px;
+  }
+  .m-ipot .m-ipot__p {
+    width: inherit;
+    font-weight: 500;
+    font-size: 12px;
+    padding-top: 8px;
+  }
+  .m-ipot .m-ipot__btns {
+    margin-top: 12px;
+  }
+  .m-ipot .m-iport__calc,
+  .m-ipot .m-iport__spec {
+    font-size: 10px;
+    line-height: 120%;
+    white-space: pre;
+  }
+  .m-ipot .m-ipot__icon {
+    width: 48px;
+    height: 48px;
+    right: 16px;
   }
 }/*# sourceMappingURL=style.css.map */
