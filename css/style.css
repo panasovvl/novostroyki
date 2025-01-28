@@ -542,7 +542,7 @@ footer {
   top: 0;
   background-color: var(--dominant-main);
   padding-top: 33px;
-  padding-bottom: 19px;
+  margin-bottom: 19px;
 }
 .m-filter .m-filter__mobile-top .m-filter__h3 {
   font-family: var(--font-family);
@@ -1005,6 +1005,9 @@ footer {
   font-size: 16px;
   color: var(--akcent);
 }
+.m-popular .m-popular__all::before {
+  content: "Все жилие комплексы";
+}
 .m-popular .m-popular__swiper {
   --pad-top: 32px;
   --swiper-navigation-top-offset: calc(116px + var(--pad-top) - 16px);
@@ -1040,12 +1043,21 @@ footer {
   font-size: 12px;
   color: var(--dominant-main);
 }
-.m-popular .m-popular__swiper .m-popular__card .m-popular__pic picture {
+.m-popular .m-popular__swiper .m-popular__card .m-popular__pic label {
   -webkit-mask-image: url(../img/heart.svg);
           mask-image: url(../img/heart.svg);
+  -webkit-mask-size: cover;
+          mask-size: cover;
   background: var(--dominant-main);
   width: 24px;
   height: 23px;
+  cursor: pointer;
+}
+.m-popular .m-popular__swiper .m-popular__card .m-popular__pic label input {
+  display: none;
+}
+.m-popular .m-popular__swiper .m-popular__card .m-popular__pic label:has(input:checked) {
+  background: var(--akcent);
 }
 .m-popular .m-popular__swiper .m-popular__card .m-popular__price {
   font-family: var(--font-family);
@@ -1069,6 +1081,15 @@ footer {
   .m-popular .m-popular__h2 {
     font-size: 28px;
   }
+  .m-popular .m-popular__swiper {
+    --pad-top: 25px;
+    margin: 0 -36px;
+    padding: var(--pad-top) 0 55px;
+  }
+  .m-popular .m-popular__swiper .swiper-button-prev,
+  .m-popular .m-popular__swiper .swiper-button-next {
+    display: none;
+  }
 }
 @media screen and (max-width: 660px) {
   .m-popular .m-popular__h2 {
@@ -1076,6 +1097,27 @@ footer {
     font-weight: 700;
   }
   .m-popular .m-popular__all {
+    font-size: 14px;
+  }
+  .m-popular .m-popular__all::before {
+    content: "Все ЖК";
+  }
+  .m-popular .m-popular__swiper {
+    --pad-top: 20px;
+    margin: 0 -11px;
+    padding: var(--pad-top) 0 43px;
+  }
+  .m-popular .m-popular__swiper .m-popular__card .m-popular__pic .m-popular__counter {
+    font-size: 14px;
+  }
+  .m-popular .m-popular__swiper .m-popular__card .m-popular__pic .m-popular__counter-label {
+    font-size: 10px;
+  }
+  .m-popular .m-popular__swiper .m-popular__card .m-popular__pic label {
+    width: 16px;
+    height: 15px;
+  }
+  .m-popular .m-popular__swiper .m-popular__card .m-popular__price {
     font-size: 14px;
   }
 }/*# sourceMappingURL=style.css.map */

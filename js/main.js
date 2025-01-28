@@ -55,8 +55,8 @@ function init_dropsearch(drop, list_cb, cb) {
   document.addEventListener("click", (evt) => {
     if (
       drop.classList.contains("drop_open") &&
-      (!_$('.dropsearch__field', drop).contains(evt.target)
-       && !_$('.dropsearch__list', drop).contains(evt.target) ||
+      ((!_$(".dropsearch__field", drop).contains(evt.target) &&
+        !_$(".dropsearch__list", drop).contains(evt.target)) ||
         _$(".dropsearch__icon", drop) == evt.target)
     ) {
       drop.classList.remove("drop_open");
@@ -130,7 +130,7 @@ function init_drop(drop) {
     if (
       drop.classList.contains("drop_open") &&
       (!drop.contains(evt.target) ||
-       (_$(".drop__icon", drop) == evt.target && !evt.openning))
+        (_$(".drop__icon", drop) == evt.target && !evt.openning))
     ) {
       drop.classList.remove("drop_open");
       // evt.preventDefault();
@@ -157,7 +157,12 @@ init_dropsearch(
 init_dropsearch(
   _$(".m-filter__distr"),
   async (text) => {
-    const resp = await fetch("data/districts.json?c=" + encodeURIComponent(city) + "&d=" + encodeURIComponent(text));
+    const resp = await fetch(
+      "data/districts.json?c=" +
+        encodeURIComponent(city) +
+        "&d=" +
+        encodeURIComponent(text)
+    );
     return await resp.json();
   },
   (d) => {
@@ -168,16 +173,14 @@ init_dropsearch(
 
 init_drop(_$(".m-filter__rooms"));
 
-_$('.m-filter__rooms').addEventListener('change', evt => {
-  if(evt.target.value == 'studio')
-    console.log('Студия', evt.target.checked);
-  else
-    console.log('Комнат', evt.target.value);
-})
+_$(".m-filter__rooms").addEventListener("change", (evt) => {
+  if (evt.target.value == "studio") console.log("Студия", evt.target.checked);
+  else console.log("Комнат", evt.target.value);
+});
 
-_$('.m-filter__type-grp').addEventListener('change', evt => {
-  console.log('Тип недвижимости', evt.target.value);
-})
+_$(".m-filter__type-grp").addEventListener("change", (evt) => {
+  console.log("Тип недвижимости", evt.target.value);
+});
 
 init_drop(_$(".m-filter__price"));
 
@@ -198,10 +201,14 @@ imask.mask(_$(".m-filter__area input[name=area-from]"));
 imask.mask(_$(".m-filter__area input[name=area-to]"));
 
 function change_dropsearch_placeholder() {
-  let ph = _$('.m-filter__city input').getAttribute(ham_mql.matches ? 'data-ph-mobile' : 'data-ph');
-  _$('.m-filter__city input').setAttribute('placeholder', ph);
-  ph = _$('.m-filter__distr input').getAttribute(ham_mql.matches ? 'data-ph-mobile' : 'data-ph');
-  _$('.m-filter__distr input').setAttribute('placeholder', ph);
+  let ph = _$(".m-filter__city input").getAttribute(
+    ham_mql.matches ? "data-ph-mobile" : "data-ph"
+  );
+  _$(".m-filter__city input").setAttribute("placeholder", ph);
+  ph = _$(".m-filter__distr input").getAttribute(
+    ham_mql.matches ? "data-ph-mobile" : "data-ph"
+  );
+  _$(".m-filter__distr input").setAttribute("placeholder", ph);
 }
 change_dropsearch_placeholder();
 
@@ -234,21 +241,30 @@ ham_mql.addEventListener("change", (evt) => {
 });
 
 /* Popular */
-const swiper = new Swiper('.m-popular__swiper', {
-  // Optional parameters
-  direction: 'horizontal',
+const swiper = new Swiper(".m-popular__swiper", {
   loop: true,
-  slidesPerView: 3,
-  spaceBetween: 25,
+  slidesPerView: 1.1,
+  spaceBetween: 8,
+  breakpoints: {
+    [ham_res]: {
+      slidesPerView: 2,
+      spaceBetween: 24,
+    },
+    1100: {
+      slidesPerView: 3,
+      spaceBetween: 25,
+    },
+  },
+  centeredSlides: true,
 
   // If we need pagination
   pagination: {
-    el: '.swiper-pagination',
+    el: ".swiper-pagination",
   },
 
   // Navigation arrows
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
   },
 });

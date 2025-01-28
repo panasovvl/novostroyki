@@ -591,7 +591,7 @@ footer {
         top: 0;
         background-color: var(--dominant-main);
         padding-top: 33px;
-        padding-bottom: 19px;
+        margin-bottom: 19px;
 
         .m-filter__h3 {
             font-family: var(--font-family);
@@ -1154,6 +1154,10 @@ footer {
         font-weight: 600;
         font-size: 16px;
         color: var(--akcent);
+
+        &::before {
+            content: "Все жилие комплексы";
+        }
     }
 
     .m-popular__swiper {
@@ -1199,11 +1203,22 @@ footer {
                     font-size: 12px;
                     color: var(--dominant-main);
                 }
-                picture {
+
+                label {
                     mask-image: url(../img/heart.svg);
+                    mask-size: cover;
                     background: var(--dominant-main);
                     width: 24px;
                     height: 23px;
+                    cursor: pointer;
+
+                    input {
+                        display: none;
+                    }
+
+                    &:has(input:checked) {
+                        background: var(--akcent);
+                    }
                 }
             }
 
@@ -1233,6 +1248,18 @@ footer {
         .m-popular__h2 {
             font-size: 28px;
         }
+
+        .m-popular__swiper {
+            --pad-top: 25px;
+            margin: 0 -36px;
+            padding: var(--pad-top) 0 55px;
+
+
+            .swiper-button-prev,
+            .swiper-button-next {
+                display: none;
+            }
+        }
     }
 
     @include media($ham-res) {
@@ -1243,6 +1270,36 @@ footer {
 
         .m-popular__all {
             font-size: 14px;
+
+            &::before {
+                content: "Все ЖК";
+            }
+        }
+
+        .m-popular__swiper {
+            --pad-top: 20px;
+            margin: 0 -11px;
+            padding: var(--pad-top) 0 43px;
+
+            .m-popular__card {
+                .m-popular__pic {
+                    .m-popular__counter {
+                        font-size: 14px;
+                    }
+
+                    .m-popular__counter-label {
+                        font-size: 10px;
+                    }
+
+                    label {
+                        width: 16px;
+                        height: 15px;
+                    }
+                }
+                .m-popular__price {
+                    font-size: 14px;
+                }
+            }
         }
     }
 }
