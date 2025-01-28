@@ -1550,8 +1550,148 @@ footer {
             line-height: 120%;
             gap: 4px;
         }
+
         .m-why__command {
             display: none;
+        }
+    }
+}
+
+.m-about {
+    padding-top: 80px;
+
+    .m-about__box {
+        display: flex;
+    }
+
+    .m-about__pic {
+        position: relative;
+        flex: 1 1 auto;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            z-index: -1;
+        }
+    }
+
+    .m-about__brand {
+        padding: 44px 59px 28px 59px;
+        text-align: center;
+        font-weight: 700;
+        font-size: 16px;
+        color: var(--dominant-main);
+        background: var(--content-main);
+
+        span {
+            color: var(--akcent);
+        }
+    }
+
+    .m-about__info {
+        border-bottom: 1px solid var(--content-dop-light);
+        border-right: 1px solid var(--content-dop-light);
+        border-top: 1px solid var(--content-dop-light);
+        border-radius: 0 8px 8px 0;
+        padding: 20px;
+        width: 411px;
+    }
+
+    .m-about__h3 {
+        font-weight: 700;
+        font-size: 20px;
+        color: var(--content-main);
+    }
+
+    .m-about__p {
+        padding-top: 12px;
+    }
+
+    .m-about__p,
+    .m-about__p-more {
+        font-size: 16px;
+        line-height: 130%;
+        color: var(--content-main);
+    }
+
+    .m-about__more-btn {
+        display: block;
+        padding: 12px 0 0 0;
+        background: none;
+        border: none;
+        font-weight: 600;
+        font-size: 16px;
+        color: var(--akcent);
+
+        &::before {
+            content: "Подробнее";
+        }
+
+        input {
+            display: none;
+        }
+    }
+
+    .m-about__p-more {
+        display: none;
+    }
+
+    .m-about__p-block:has(input:checked) .m-about__p-more {
+        display: block;
+    }
+
+    .m-about__p-block:has(input:checked) .m-about__more-btn::before {
+        content: "Скрыть";
+    }
+
+    @include media(1100) {
+        padding-top: 40px;
+
+        .m-about__brand {
+            flex: 1 1 auto;
+            padding: 24px 0 24px 0;
+        }
+
+        .m-about__p,
+        .m-about__p-more {
+            font-size: 14px;
+        }
+    }
+
+    @include media($ham-res) {
+        .m-about__pic {
+            display: none;
+        }
+
+        .m-about__info {
+            flex: 1 1 auto;
+            padding: 0;
+            border: none;
+        }
+
+        .m-about__p,
+        .m-about__p-more {
+            font-size: 12px;
+        }
+
+        .m-about__more-btn {
+            font-size: 12px;
+        }
+
+        .m-about__p {
+            mask-image: linear-gradient(180deg, #fff 50%, rgba(255, 255, 255, 0) 100%);
+        }
+
+        .m-about__p-block:has(input:checked) .m-about__p {
+            mask-image: none;
         }
     }
 }
