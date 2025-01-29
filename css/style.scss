@@ -1,7 +1,6 @@
 /* Vars & Mixins */
 $ham-res: 660;
 
-
 @mixin media($res) {
     @media screen and (max-width: #{$res}px) {
         @content
@@ -1557,8 +1556,15 @@ footer {
     }
 }
 
+@property --about-more-col1 {
+    syntax: '<color>';
+    initial-value: rgba(255, 255, 255, 0);
+    inherits: false;
+}
+
 .m-about {
     padding-top: 80px;
+    padding-bottom: 0;
 
     .m-about__box {
         display: flex;
@@ -1630,6 +1636,7 @@ footer {
         font-weight: 600;
         font-size: 16px;
         color: var(--akcent);
+        cursor: pointer;
 
         &::before {
             content: "Подробнее";
@@ -1641,11 +1648,13 @@ footer {
     }
 
     .m-about__p-more {
-        display: none;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s;
     }
 
     .m-about__p-block:has(input:checked) .m-about__p-more {
-        display: block;
+        max-height: 120px;
     }
 
     .m-about__p-block:has(input:checked) .m-about__more-btn::before {
@@ -1686,29 +1695,153 @@ footer {
             font-size: 12px;
         }
 
-        .m-about__p {
-            mask-image: linear-gradient(180deg, #fff 50%, rgba(255, 255, 255, 0) 100%);
+        .m-about__p-block>div {
+            mask-image: linear-gradient(180deg, #fff 50%, var(--about-more-col1) 100%);
+            transition: --about-more-col1 0.5s;
         }
 
-        .m-about__p-block:has(input:checked) .m-about__p {
-            mask-image: none;
+        .m-about__p-block:has(input:checked)>div {
+            --about-more-col1: #fff;
         }
     }
 }
 
 .m-serv {
-
-    .m-container {}
+    padding-top: 80px;
 
     .m-serv__h2 {}
 
-    .m-serv__accord {}
+    .m-serv__accord {
+        padding-top: 32px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+    }
 
-    .ac {}
+    .ac {
+        flex: 1 1 26%;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        border: none;
+        background: none;
+    }
 
-    .ac-header {}
+    .ac-header {
+        img {
+            display: block;
+            border-radius: 8px 8px 0 0;
+            width: 100%;
+        }
+    }
 
-    .ac-trigger {}
+    .ac-trigger {
+        padding: 12px 20px;
+        border-left: 1px solid var(--content-dop-light);
+        border-right: 1px solid var(--content-dop-light);
+        background: none;
+        border-top: none;
+        border-bottom: none;
+        font-weight: 600;
+        font-size: 20px;
+        color: var(--akcent);
+        white-space: pre-wrap;
+        cursor: text;
 
-    .ac-panel {}
+        &:focus {
+            color: var(--akcent);
+        }
+
+        &::after {
+            display: none;
+        }
+    }
+
+    .ac-panel {
+        flex: 1 1 auto;
+        padding: 0 20px 20px 20px;
+        border-left: 1px solid var(--content-dop-light);
+        border-right: 1px solid var(--content-dop-light);
+        border-bottom: 1px solid var(--content-dop-light);
+        border-radius: 0 0 8px 8px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 130%;
+        color: var(--content-main);
+    }
+
+    @include media(1366) {
+        .ac-panel {
+            font-size: 15px;
+        }
+    }
+
+    @include media(1100) {
+        padding-top: 40px;
+
+        .ac {
+            flex: 1 1 35%;
+        }
+
+        .ac-panel {
+            font-size: 14px;
+        }
+    }
+
+    @include media($ham-res) {
+        .m-serv__accord {
+            display: inherit;
+            padding-top: 0;
+        }
+
+        .ac-header {
+            img {
+                display: none;
+            }
+        }
+
+        .ac {
+            display: inherit;
+            border-bottom: 1px solid var(--content-dop-light);
+            padding: 20px 0 20px 0;
+        }
+
+        .ac-trigger {
+            padding: 0 30px 0px 0;
+            font-weight: 500;
+            font-size: 16px;
+            color: var(--content-main);
+            white-space: wrap;
+            cursor: pointer;
+            border: none;
+
+            &:focus {
+                color: inherit;
+            }
+
+            &::after {
+                display: inherit;
+                color: var(--akcent);
+                font-size: 46px;
+                width: 26px;
+                right: 0;
+            }
+        }
+
+        .ac-panel {
+            padding: 0px 30px 0 0;
+            border: none;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 130%;
+            color: var(--content-main);
+
+            &::before {
+                //Это вместо padding-top:10px
+                content: "";
+                height: 10px;
+                display: block;
+            }
+        }
+    }
 }

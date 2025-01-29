@@ -268,3 +268,23 @@ const swiper = new Swiper(".m-popular__swiper", {
     prevEl: ".swiper-button-prev",
   },
 });
+
+/* Services */
+let serv_ac = null;
+function update_accord() {
+  if(ham_mql.matches) {
+    if(!serv_ac)
+      serv_ac = new Accordion(".m-serv__accord", {});
+    else {
+      serv_ac.attachEvents();
+      serv_ac.closeAll();
+    }
+  } else {
+    if(serv_ac) {
+      serv_ac.detachEvents();
+      serv_ac.openAll();
+    }
+  }
+}
+update_accord();
+ham_mql.addEventListener('change', update_accord);
