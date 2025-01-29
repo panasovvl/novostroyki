@@ -1849,6 +1849,7 @@ footer {
 
 .m-consult {
     padding-top: 80px;
+    padding-bottom: 0;
 
     .m-consult__box {
         padding: 32px 20px 62px 20px;
@@ -2019,5 +2020,16 @@ footer {
             font-size: 10px;
             line-height: 120%;
         }
+    }
+}
+.m-reviews {
+    padding-top: 80px;
+
+    @include media(1100) {
+        padding-top: 40px;
+    }
+
+    @include media($ham-res) {
+        padding-top: 20px;
     }
 }

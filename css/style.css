@@ -1591,6 +1591,7 @@ footer {
 
 .m-consult {
   padding-top: 80px;
+  padding-bottom: 0;
 }
 .m-consult .m-consult__box {
   padding: 32px 20px 62px 20px;
@@ -1740,5 +1741,19 @@ footer {
     padding-top: 20px;
     font-size: 10px;
     line-height: 120%;
+  }
+}
+
+.m-reviews {
+  padding-top: 80px;
+}
+@media screen and (max-width: 1100px) {
+  .m-reviews {
+    padding-top: 40px;
+  }
+}
+@media screen and (max-width: 660px) {
+  .m-reviews {
+    padding-top: 20px;
   }
 }/*# sourceMappingURL=style.css.map */
