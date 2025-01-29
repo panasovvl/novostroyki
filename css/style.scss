@@ -1708,6 +1708,7 @@ footer {
 
 .m-serv {
     padding-top: 80px;
+    padding-bottom: 0;
 
     .m-serv__h2 {}
 
@@ -1842,6 +1843,181 @@ footer {
                 height: 10px;
                 display: block;
             }
+        }
+    }
+}
+
+.m-consult {
+    padding-top: 80px;
+
+    .m-consult__box {
+        padding: 32px 20px 62px 20px;
+        border-radius: 8px;
+        background: var(--dominant-dop);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0 25px;
+    }
+
+    .m-consult__h2 {
+        flex: 1 1 100%;
+        text-align: center;
+    }
+
+    .m-counsult__p {
+        flex: 1 1 100%;
+        padding-top: 22px;
+        color: var(--content-dop);
+        text-align: center;
+
+        a {
+            color: var(--akcent);
+        }
+
+        img {
+            display: inline;
+            vertical-align: text-bottom;
+        }
+
+        br {
+            display: none;
+        }
+    }
+
+    .m-consult__name,
+    .m-consult__tel {
+        margin-top: 40px;
+        font-weight: 400;
+        font-size: 16px;
+        border: 1px solid var(--content-dop-light);
+        border-radius: 8px;
+        padding: 16px 20px;
+        background: var(--dominant-main);
+        width: 50px;
+
+        &::placeholder {
+            font-style: inherit;
+            color: var(--content-dop);
+            padding: 0;
+        }
+    }
+
+    .m-consult__name {
+        flex: 1.3 1 26%;
+    }
+
+    .m-consult__tel {
+        flex: 1 1 26%;
+    }
+
+    .m-consult__btn {
+        margin-top: 40px;
+        flex: 0 0 25%;
+        font-weight: 600;
+        font-size: 16px;
+        text-align: center;
+        color: var(--dominant-main);
+        border: none;
+        border-radius: 8px;
+        padding: 16px 20px;
+        background: var(--akcent);
+        white-space: nowrap;
+    }
+
+    .m-consult__pdata {
+        padding-top: 40px;
+        flex: 1 1 100%;
+        font-weight: 400;
+        font-size: 14px;
+        color: var(--content-dop);
+        text-align: center;
+
+        a {
+            color: var(--akcent);
+            white-space: nowrap;
+        }
+    }
+
+    @include media(1100) {
+        padding-top: 40px;
+
+        .m-consult__box {
+            padding: 32px 36px 40px 36px;
+
+        }
+
+        .m-counsult__p {
+            font-size: 14px;
+
+            img {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        .m-consult__name,
+        .m-consult__tel {
+            margin-top: 32px;
+            padding: 14px 20px;
+            flex: 1 1 36%;
+        }
+
+        .m-consult__btn {
+            flex: 1 1 100%;
+            margin-top: 16px;
+        }
+
+        .m-consult__pdata {
+            padding-top: 32px;
+            font-size: 14px;
+        }
+    }
+
+    @include media($ham-res) {
+        padding-top: 0;
+
+        .m-consult__box {
+            padding: 28px 12px 20px 12px;
+            margin-left: -12px;
+            margin-right: -12px;
+        }
+
+        .m-consult__h2 {
+            font-size: 20px;
+        }
+
+        .m-counsult__p {
+            font-size: 12px;
+            padding-top: 12px;
+
+            img {
+                width: 16px;
+                height: 16px;
+            }
+
+            br {
+                display: block;
+            }
+        }
+
+        .m-consult__name,
+        .m-consult__tel {
+            margin-top: 32px;
+            flex: 1 1 100%;
+        }
+
+        .m-consult__tel {
+            margin-top: 12px;
+        }
+
+        .m-consult__btn {
+            margin-top: 32px;
+        }
+
+        .m-consult__pdata {
+            padding-top: 20px;
+            font-size: 10px;
+            line-height: 120%;
         }
     }
 }

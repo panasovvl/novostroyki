@@ -288,3 +288,10 @@ function update_accord() {
 }
 update_accord();
 ham_mql.addEventListener('change', update_accord);
+
+/* Consult */
+const tel_mask = Inputmask({
+  mask: "+7 999 999 99 99",
+  showMaskOnHover: true,
+});
+tel_mask.mask(_$(".m-consult__tel"));
