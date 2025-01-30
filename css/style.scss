@@ -312,7 +312,7 @@ footer {
         }
 
         @include media($ham-res) {
-            position: absolute;
+            position: fixed;
             inset: 0;
             background-color: var(--dominant-main-transparent);
             grid-template-columns: 1fr;
@@ -970,7 +970,7 @@ footer {
         }
 
         .m-filter__group {
-            position: absolute;
+            position: fixed;
             inset: 0;
             background-color: var(--dominant-main-transparent);
             padding: 0 12px;

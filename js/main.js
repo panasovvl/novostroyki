@@ -8,19 +8,23 @@ const _$$ = (q, elm) => (elm ? elm : document).querySelectorAll(q);
 _$(".m-header__burger").addEventListener("click", (evt) => {
   _$(".m-header__box").classList.add("m-header__box_trans");
   _$(".m-header__box").classList.add("open");
+  document.body.style.overflow = 'hidden';
 });
 
 _$(".m-header__burger-close").addEventListener("click", (evt) => {
   _$(".m-header__box").classList.remove("open");
   _$(".m-header__box").scrollTop = 0;
+  document.body.style.overflow = '';
 });
 
 document.addEventListener("click", (evt) => {
   if (
+    _$(".m-header__box").classList.contains("open") &&
     !_$(".m-header__box").contains(evt.target) &&
     !_$(".m-header__burger").contains(evt.target)
   ) {
     _$(".m-header__box").classList.remove("open");
+    document.body.style.overflow = '';
   }
 });
 
@@ -33,6 +37,7 @@ ham_mql.addEventListener("change", (evt) => {
   _$(".m-header__box").classList.remove("m-header__box_trans");
   _$(".m-header__box").classList.remove("open");
   _$(".m-header__box").scrollTop = 0;
+  document.body.style.overflow = '';
 });
 
 /* Drop Search */
@@ -217,19 +222,23 @@ change_dropsearch_placeholder();
 _$(".m-filter__mobile-search").addEventListener("click", (evt) => {
   _$(".m-filter__group").classList.add("m-filter__group_trans");
   _$(".m-filter__group").classList.add("open");
+  document.body.style.overflow = 'hidden';
 });
 
 _$(".m-filter__mobile-close").addEventListener("click", (evt) => {
   _$(".m-filter__group").classList.remove("open");
   _$(".m-filter__group").scrollTop = 0;
+  document.body.style.overflow = '';
 });
 
 document.addEventListener("click", (evt) => {
   if (
+    _$(".m-filter__group").classList.contains('open') &&
     !_$(".m-filter__group").contains(evt.target) &&
     !_$(".m-filter__mobile-search").contains(evt.target)
   ) {
     _$(".m-filter__group").classList.remove("open");
+    document.body.style.overflow = '';
   }
 });
 
@@ -237,6 +246,7 @@ ham_mql.addEventListener("change", (evt) => {
   _$(".m-filter__group").classList.remove("m-filter__group_trans");
   _$(".m-filter__group").classList.remove("open");
   _$(".m-filter__group").scrollTop = 0;
+  document.body.style.overflow = '';
   change_dropsearch_placeholder();
 });
 
