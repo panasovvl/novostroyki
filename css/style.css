@@ -1968,6 +1968,7 @@ footer {
 
 .m-search {
   padding-top: 80px;
+  padding-bottom: 0;
 }
 .m-search .m-search__top {
   display: flex;
@@ -2105,5 +2106,112 @@ footer {
   .m-search .m-search__distr .m-search__item,
   .m-search .m-search__cottag .m-search__item {
     flex: 1 1 100%;
+  }
+}
+
+.m-join {
+  margin-top: 80px;
+  padding-top: 0px;
+  padding-bottom: 0;
+  background: var(--dominant-dop);
+}
+.m-join .m-join__box {
+  padding: 63px 0;
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  justify-content: start;
+}
+.m-join .m-join__h3 {
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--content-main);
+}
+.m-join .m-join__youtube {
+  padding-left: 58px;
+}
+.m-join .m-join__vk {
+  padding-left: 25px;
+}
+.m-join .m-join__vk div {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url(../img/VK_24.svg);
+          mask-image: url(../img/VK_24.svg);
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  background: #5ab9e8;
+  margin-right: 4px;
+}
+.m-join .m-join__telegram {
+  margin-left: 24px;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  border-radius: 8px;
+  padding: 8px;
+  background: #5ab9e8;
+  border: none;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 130%;
+  letter-spacing: 0.01em;
+  color: var(--dominant-main);
+}
+.m-join .m-join__telegram div {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url(../img/Telegram_24.svg);
+          mask-image: url(../img/Telegram_24.svg);
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  background: var(--dominant-main);
+  margin-right: 4px;
+}
+.m-join .m-join__telegram br {
+  display: none;
+}
+@media screen and (max-width: 1100px) {
+  .m-join {
+    margin-top: 40px;
+  }
+  .m-join .m-join__box {
+    padding: 53px 0;
+  }
+  .m-join .m-join__youtube {
+    padding-left: 29px;
+  }
+  .m-join .m-join__vk {
+    padding-left: 23px;
+  }
+  .m-join .m-join__telegram {
+    margin-left: 22px;
+  }
+  .m-join .m-join__telegram br {
+    display: inherit;
+  }
+}
+@media screen and (max-width: 765px) {
+  .m-join .m-join__box {
+    grid-template-columns: repeat(2, 50%);
+    grid-auto-flow: inherit;
+    gap: 12px 62px;
+  }
+  .m-join .m-join__h3 {
+    grid-column: span 2;
+  }
+  .m-join .m-join__youtube {
+    padding-left: 0;
+    justify-self: end;
+  }
+  .m-join .m-join__vk {
+    padding-left: 0;
+  }
+  .m-join .m-join__telegram {
+    grid-column: span 2;
+    justify-self: center;
+  }
+  .m-join .m-join__telegram br {
+    display: none;
   }
 }/*# sourceMappingURL=style.css.map */
