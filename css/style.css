@@ -47,6 +47,7 @@ button {
 /* Common */
 :root {
   --ham-res: 660;
+  --ham-padding:11px;
 }
 
 :root {
@@ -245,7 +246,7 @@ footer {
   header,
   section,
   footer {
-    padding: 33px 11px;
+    padding: 33px var(--ham-padding);
   }
 }
 
@@ -980,7 +981,7 @@ footer {
   }
   .m-filter .m-filter__counter-box {
     padding-top: 12px;
-    gap: 44px;
+    gap: 34px;
   }
   .m-filter .m-filter__counter-box .m-filter__number {
     font-size: 16px;
@@ -1105,7 +1106,7 @@ footer {
   }
   .m-popular .m-popular__swiper {
     --pad-top: 20px;
-    margin: 0 -11px;
+    margin: 0 calc(0px - var(--ham-padding));
     padding: var(--pad-top) 0 23px;
   }
   .m-popular .m-popular__swiper .m-popular__card .m-popular__pic .m-popular__counter {
@@ -1230,8 +1231,8 @@ footer {
     padding-bottom: 0;
   }
   .m-ipot .m-ipot__box {
-    margin-left: -11px;
-    margin-right: -11px;
+    margin-left: calc(0px - var(--ham-padding));
+    margin-right: calc(0px - var(--ham-padding));
   }
   .m-ipot .m-ipot__info {
     padding: 20px 12px 12px 12px;
@@ -1709,8 +1710,8 @@ footer {
   }
   .m-consult .m-consult__box {
     padding: 28px 12px 20px 12px;
-    margin-left: -12px;
-    margin-right: -12px;
+    margin-left: calc(0px - var(--ham-padding));
+    margin-right: calc(0px - var(--ham-padding));
   }
   .m-consult .m-consult__h2 {
     font-size: 20px;
