@@ -1746,6 +1746,7 @@ footer {
 
 .m-reviews {
   padding-top: 80px;
+  padding-bottom: 0;
 }
 @media screen and (max-width: 1100px) {
   .m-reviews {
@@ -1755,5 +1756,210 @@ footer {
 @media screen and (max-width: 660px) {
   .m-reviews {
     padding-top: 20px;
+  }
+}
+
+.m-blog {
+  padding-top: 80px;
+}
+.m-blog .m-blog__box {
+  display: flex;
+  flex-wrap: wrap;
+}
+.m-blog .m-blog__h2 {
+  flex: 1 1 68%;
+  align-self: baseline;
+}
+.m-blog .m-blog__h2::before {
+  content: "Перейти в блог";
+}
+.m-blog .m-blog__blog-link {
+  flex: 0 0 auto;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--akcent);
+  align-self: baseline;
+}
+.m-blog .m-blog__outlink {
+  display: inline;
+  vertical-align: text-bottom;
+  padding-left: 6px;
+}
+.m-blog .m-blog__youtube-link {
+  display: inline;
+  padding-left: 42px;
+  flex: 0 0 auto;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--akcent);
+  align-self: baseline;
+}
+.m-blog .m-blog__youtube-icon {
+  display: inline;
+  vertical-align: middle;
+}
+.m-blog .m-blog__blog-box {
+  padding-top: 32px;
+  flex: 1 1 calc(60% + 24px);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.m-blog .m-blog__blog-item {
+  flex: 1 1 35%;
+}
+.m-blog .m-blog__blog-item,
+.m-blog .m-blog__youtube-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  aspect-ratio: 411/234;
+}
+.m-blog .m-blog__pic {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 8px;
+  z-index: -1;
+}
+.m-blog .m-blog__blog-tag {
+  margin-right: auto;
+  font-weight: 500;
+  font-size: 12px;
+  color: var(--content-dop);
+  border-radius: 100px;
+  padding: 6px 12px;
+  background: var(--dominant-main);
+}
+.m-blog .m-blog__title {
+  margin-top: auto;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 110%;
+  color: var(--dominant-main);
+}
+.m-blog .m-blog__p {
+  padding-top: 8px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 120%;
+  color: var(--dominant-main);
+}
+.m-blog .m-blog__date {
+  padding-top: 8px;
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--dominant-main);
+  opacity: 0.7;
+}
+.m-blog .m-blog__date img {
+  padding-right: 8px;
+  display: inline;
+  vertical-align: top;
+}
+.m-blog .m-blog__youtube-box {
+  padding-top: 32px;
+  padding-left: 24px;
+  flex: 1 1 30%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.m-blog .m-blog__youtube-item {
+  flex: 1 1 100%;
+}
+.m-blog .m-blog__youtube-play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -110%);
+}
+@media screen and (max-width: 1100px) {
+  .m-blog {
+    padding-top: 50px;
+  }
+  .m-blog .m-blog__h2 {
+    font-size: 28px;
+  }
+  .m-blog .m-blog__blog-box {
+    padding-top: 25px;
+    flex: 1 1 100%;
+  }
+  .m-blog .m-blog__youtube-link {
+    padding-top: 32px;
+    flex: 1 1 100%;
+    order: 1;
+    text-align: right;
+  }
+  .m-blog .m-blog__youtube-box {
+    padding-top: 24px;
+    padding-left: 0;
+    flex: 1 1 100%;
+    order: 2;
+  }
+  .m-blog .m-blog__youtube-item {
+    flex: 1 1 35%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .m-blog .m-blog__title {
+    font-size: 14px;
+  }
+  @container (width <= 250px) {
+    .m-blog .m-blog__title {
+      font-size: 12px;
+    }
+  }
+  .m-blog .m-blog__p {
+    font-size: 10px;
+  }
+  .m-blog .m-blog__youtube-item {
+    container-type: inline-size;
+  }
+  .m-blog .m-blog__youtube-play {
+    width: 44px;
+    transform: translate(-50%, -150%);
+  }
+}
+@media screen and (max-width: 660px) {
+  .m-blog {
+    padding-top: 40px;
+  }
+  .m-blog .m-blog__h2 {
+    font-size: 20px;
+  }
+  .m-blog .m-blog__h2::before {
+    content: "Новости";
+  }
+  .m-blog .m-blog__blog-link {
+    font-size: 14px;
+  }
+  .m-blog .m-blog__youtube-link {
+    padding-top: 20px;
+    font-size: 12px;
+  }
+  .m-blog .m-blog__outlink {
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+  }
+  .m-blog .m-blog__blog-box {
+    padding-top: 20px;
+    gap: 4px;
+  }
+  .m-blog .m-blog__blog-item {
+    flex: 1 1 100%;
+  }
+  .m-blog .m-blog__youtube-box {
+    padding-top: 20px;
+    gap: 4px;
+  }
+  .m-blog .m-blog__youtube-item {
+    flex: 1 1 100%;
   }
 }/*# sourceMappingURL=style.css.map */
