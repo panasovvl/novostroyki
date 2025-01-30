@@ -543,7 +543,7 @@ footer {
   top: 0;
   background-color: var(--dominant-main);
   padding-top: 33px;
-  margin-bottom: 19px;
+  padding-bottom: 19px;
 }
 .m-filter .m-filter__mobile-top .m-filter__h3 {
   font-family: var(--font-family);
