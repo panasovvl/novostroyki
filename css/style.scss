@@ -1885,7 +1885,9 @@ footer {
             vertical-align: text-bottom;
         }
 
-        white-space: nowrap;
+        span {
+            display: inline-block;
+        }
         // br {
         //     display: none;
         // }
@@ -2483,7 +2485,10 @@ footer {
         color: var(--content-main);
         height: 1lh;
         overflow-y: hidden;
-        white-space: nowrap;
+        // white-space: nowrap;
+        span {
+            display: inline-block;
+        }
     }
 
     .m-join__youtube {
