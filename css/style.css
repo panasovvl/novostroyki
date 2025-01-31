@@ -1615,6 +1615,7 @@ footer {
   padding-top: 22px;
   color: var(--content-dop);
   text-align: center;
+  white-space: nowrap;
 }
 .m-consult .m-counsult__p a {
   color: var(--akcent);
@@ -1622,9 +1623,6 @@ footer {
 .m-consult .m-counsult__p img {
   display: inline;
   vertical-align: text-bottom;
-}
-.m-consult .m-counsult__p br {
-  display: none;
 }
 .m-consult .m-consult__name,
 .m-consult .m-consult__tel {
@@ -1727,9 +1725,6 @@ footer {
   .m-consult .m-counsult__p img {
     width: 16px;
     height: 16px;
-  }
-  .m-consult .m-counsult__p br {
-    display: block;
   }
   .m-consult .m-consult__name,
   .m-consult .m-consult__tel {
@@ -2135,10 +2130,9 @@ footer {
   font-weight: 700;
   font-size: 20px;
   color: var(--content-main);
-  display: flex;
-  flex-wrap: wrap;
   height: 1lh;
   overflow-y: hidden;
+  white-space: nowrap;
 }
 .m-join .m-join__youtube {
   padding-left: 58px;

@@ -1885,9 +1885,10 @@ footer {
             vertical-align: text-bottom;
         }
 
-        br {
-            display: none;
-        }
+        white-space: nowrap;
+        // br {
+        //     display: none;
+        // }
     }
 
     .m-consult__name,
@@ -2001,9 +2002,9 @@ footer {
                 height: 16px;
             }
 
-            br {
-                display: block;
-            }
+            // br {
+            //     display: block;
+            // }
         }
 
         .m-consult__name,
@@ -2480,10 +2481,9 @@ footer {
         font-weight: 700;
         font-size: 20px;
         color: var(--content-main);
-        display: flex;
-        flex-wrap: wrap;
         height: 1lh;
         overflow-y: hidden;
+        white-space: nowrap;
     }
 
     .m-join__youtube {
