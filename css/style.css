@@ -2231,4 +2231,126 @@ footer {
   .m-join .m-join__box {
     padding: 20px 0 30px 0;
   }
+}
+
+.m-footer {
+  padding-top: 32px;
+  padding-bottom: 66px;
+  background: var(--content-main);
+}
+.m-footer .m-footer__box {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  gap: 12px 70px;
+}
+.m-footer .m-footer__h2 {
+  flex: 1 0 auto;
+  order: 3;
+  color: var(--dominant-dop);
+}
+.m-footer .m-footer__menu {
+  margin-top: 20px;
+  flex: 1 0 auto;
+  order: 2;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-auto-flow: column;
+  justify-content: start;
+  gap: 28px 50px;
+}
+.m-footer .m-footer__link {
+  flex: 1 1 33.333%;
+  font-size: 16px;
+  color: var(--dominant-main);
+}
+.m-footer .m-footer__contacts {
+  margin-top: 20px;
+  flex: 1 0 auto;
+  order: 1;
+  display: grid;
+  grid-template-columns: 0fr 0fr 1fr;
+  align-items: center;
+  gap: 20px;
+  justify-items: start;
+}
+.m-footer .m-footer__tel {
+  font-size: 16px;
+  color: var(--dominant-main);
+  grid-column: span 3;
+}
+.m-footer .m-footer__address {
+  font-size: 16px;
+  color: var(--dominant-main);
+  grid-column: span 3;
+}
+.m-footer .m-footer__whatsapp {
+  width: 25px;
+  height: 25px;
+  -webkit-mask-image: url(../img/WhatsApp-24.svg);
+          mask-image: url(../img/WhatsApp-24.svg);
+  background: var(--content-dop);
+  -webkit-mask-size: contain;
+          mask-size: contain;
+}
+.m-footer .m-footer__telegramm {
+  width: 26px;
+  height: 24px;
+  -webkit-mask-image: url(../img/Telegram_24.svg);
+          mask-image: url(../img/Telegram_24.svg);
+  background: var(--content-dop);
+  -webkit-mask-size: contain;
+          mask-size: contain;
+}
+.m-footer .m-footer__req-call {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  line-height: 130%;
+  color: var(--content-dop);
+  border: 1px solid var(--content-dop);
+  border-radius: 8px;
+  padding: 4px 8px;
+  background: none;
+  white-space: nowrap;
+}
+.m-footer .m-footer__req-call img {
+  width: 16px;
+  height: 16px;
+}
+.m-footer .m-footer__confident {
+  margin-top: 20px;
+  flex: 1 1 100%;
+  font-size: 12px;
+  color: var(--dominant-main);
+}
+@media screen and (max-width: 1100px) {
+  .m-footer {
+    padding-top: 22px;
+    padding-bottom: 40px;
+  }
+}
+@media screen and (max-width: 720px) {
+  .m-footer .m-footer__box {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    gap: 32px 70px;
+  }
+}
+@media screen and (max-width: 660px) {
+  .m-footer .m-footer__h2 {
+    font-size: 20px;
+  }
+  .m-footer .m-footer__tel, .m-footer .m-footer__address {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .m-footer .m-footer__contacts {
+    grid-template-columns: 1fr 1fr auto;
+  }
 }/*# sourceMappingURL=style.css.map */
