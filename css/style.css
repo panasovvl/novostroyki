@@ -692,6 +692,10 @@ footer {
 .m-filter .m-filter__rooms-box .drop__inner .m-filter__rooms-item input {
   display: none;
 }
+.m-filter .m-filter__rooms-box .drop__inner .m-filter__studio {
+  padding: 18px 28px;
+  min-width: 120px;
+}
 .m-filter .m-filter__price-box .drop__inner,
 .m-filter .m-filter__area-box .drop__inner {
   display: flex;
